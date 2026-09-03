@@ -1,0 +1,28 @@
+/* Sous-pages textes — hérite de la même DA */
+@import url("../assets/style.css");
+
+body.texte {
+  padding: clamp(2rem, 6vh, 5rem) clamp(1.2rem, 5vw, 4rem);
+  min-height: 100vh;
+}
+body.texte .page { max-width: 720px; margin: 0 auto; }
+body.texte .prose p { margin: 1rem 0; font-size: 1.15rem; line-height: 1.7; }
+body.texte .prose p.stanza { white-space: pre-line; font-style: italic; color: var(--teal-deep); }
+body.texte .back-link {
+  display: inline-block;
+  margin: 3rem 0 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--teal-deep);
+  padding: 0.7rem 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  transition: background .3s var(--ease), color .3s var(--ease);
+}
+body.texte .back-link:hover {
+  background: var(--teal-deep);
+  color: var(--bg);
+}

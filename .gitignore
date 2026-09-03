@@ -1,0 +1,13 @@
+# macOS / editors / OS
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.idea/
+.vscode/
+
+# outils locaux Claude Code
+.claude/
+
+# logs / cache
+*.log
