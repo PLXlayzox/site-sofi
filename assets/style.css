@@ -19,7 +19,7 @@ html, body { margin: 0; padding: 0; }
 
 body {
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: clamp(17px, 1.15vw, 26px); /* ponytail: fluide, monte jusqu'à ~26px pour vidéoprojecteur */
+  font-size: clamp(17px, 1.15vw, 26px);
   color: var(--ink);
   background: var(--bg);
   background-image:
@@ -30,7 +30,7 @@ body {
   overflow-x: hidden;
 }
 
-/* --- Views (single-page sections) --- */
+/* --- Views --- */
 .view {
   min-height: 100vh;
   padding: clamp(3rem, 8vh, 6rem) clamp(1.2rem, 5vw, 4rem);
@@ -45,41 +45,48 @@ body {
   transform: translateY(0);
 }
 
-/* --- Hero --- */
+/* --- Hero (logo Sofi) --- */
 .hero {
   text-align: center;
   padding: clamp(1rem, 4vh, 3rem) 0 clamp(2rem, 6vh, 4rem);
 }
 .brand {
   font-family: "Sacramento", cursive;
-  font-size: clamp(4rem, 10vw, 7.5rem);
+  font-size: clamp(5rem, 12vw, 9rem);
   font-weight: 400;
-  color: var(--teal-deep);
+  color: #1a1a1a;
   margin: 0;
-  line-height: 1;
+  line-height: 0.9;
   letter-spacing: 0.02em;
 }
 .brand-sub {
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
-  letter-spacing: 0.35em;
+  letter-spacing: 0.4em;
   font-size: 0.75rem;
-  color: var(--ink-soft);
-  margin: 0.4rem 0 0;
+  color: #1a1a1a;
+  margin: -0.2rem 0 0;
+  padding-left: 0.4em; /* absorbe le tracking */
 }
 .tagline {
   font-family: "Cormorant Garamond", serif;
   font-style: italic;
-  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+  font-size: clamp(1.15rem, 1.8vw, 1.5rem);
   color: var(--teal-deep);
-  max-width: 42ch;
+  max-width: 90vw;
   margin: 2rem auto 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (max-width: 720px) {
+  .tagline { white-space: normal; max-width: 42ch; }
 }
 
-/* --- Cards grid --- */
+/* --- Cards --- */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1.5rem;
   max-width: 1100px;
   margin: 0 auto;
@@ -92,7 +99,7 @@ body {
   backdrop-filter: blur(6px);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 2rem 1.75rem;
+  padding: 2rem 1.75rem 3rem;
   font: inherit;
   color: inherit;
   cursor: pointer;
@@ -125,14 +132,9 @@ body {
   font-family: "Cormorant Garamond", serif;
   font-weight: 500;
   font-size: 1.55rem;
-  margin: 0.6rem 0 0.6rem;
+  margin: 0.6rem 0 0;
   color: var(--teal-deep);
   line-height: 1.2;
-}
-.card p {
-  margin: 0;
-  color: var(--ink-soft);
-  font-size: 1rem;
 }
 .card-arrow {
   position: absolute;
@@ -163,58 +165,64 @@ body {
   display: block;
   box-shadow: var(--shadow);
 }
-.contact-info h2 {
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 500;
-  font-size: 1.8rem;
-  color: var(--teal-deep);
-  margin: 0 0 0.5rem;
-}
-.contact-lead {
-  color: var(--ink-soft);
-  margin: 0 0 1.5rem;
-  font-style: italic;
-}
-.contact-list, .socials {
+.contact-info { display: flex; flex-direction: column; gap: 1.2rem; }
+.contact-list {
   list-style: none;
   padding: 0;
-  margin: 0 0 1.25rem;
+  margin: 0;
 }
 .contact-list li {
   display: flex;
   gap: 1rem;
-  padding: 0.4rem 0;
+  padding: 0.5rem 0;
   border-bottom: 1px dashed var(--line);
   font-family: "Montserrat", sans-serif;
   font-size: 0.9rem;
+  align-items: center;
 }
 .contact-list span {
-  min-width: 100px;
+  min-width: 110px;
   color: var(--gold);
   text-transform: uppercase;
   letter-spacing: 0.15em;
   font-size: 0.75rem;
-  align-self: center;
 }
 .contact-list a { color: var(--ink); text-decoration: none; }
 .contact-list a:hover { color: var(--teal); }
-.socials { display: flex; gap: 0.6rem; flex-wrap: wrap; }
-.socials a {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  color: var(--teal-deep);
-  text-decoration: none;
-  font-family: "Montserrat", sans-serif;
-  font-size: 0.8rem;
-  letter-spacing: 0.1em;
-  transition: background .3s var(--ease), border-color .3s var(--ease), color .3s var(--ease);
+
+/* Forum link — décalé pour être identifiable */
+.forum-link {
+  margin-left: 2rem;
+  padding-top: 1rem;
 }
-.socials a:hover {
-  background: var(--teal-deep);
-  color: var(--bg);
-  border-color: var(--teal-deep);
+.forum-link a {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: var(--teal-deep);
+  padding: 1rem 1.2rem;
+  background: rgba(127, 176, 190, 0.15);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--gold);
+  border-radius: var(--radius);
+  transition: background .3s var(--ease), transform .3s var(--ease);
+}
+.forum-link a:hover { background: rgba(127, 176, 190, 0.28); transform: translateX(4px); }
+.forum-arrow { color: var(--gold); font-size: 1.2rem; line-height: 1; }
+.forum-link strong {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-size: 1.05rem;
+  display: block;
+}
+.forum-link em {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--ink-soft);
+  text-transform: uppercase;
 }
 
 .copyright {
@@ -227,11 +235,40 @@ body {
   padding: 2rem 0 0;
 }
 
-/* --- Inner pages --- */
-.page {
-  max-width: 780px;
-  margin: 0 auto;
+/* --- Section title (grand titre visible avec numéro) --- */
+.page { max-width: 900px; margin: 0 auto; }
+.section-title {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-size: clamp(2.4rem, 5.5vw, 4rem);
+  color: var(--teal-deep);
+  margin: 0 0 2rem;
+  line-height: 1.1;
+  display: flex;
+  align-items: baseline;
+  gap: 1.2rem;
+  flex-wrap: wrap;
 }
+.section-num {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.3em;
+  color: var(--gold);
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+}
+.sub-lead {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+  color: var(--teal-deep);
+  border-left: 2px solid var(--gold);
+  padding-left: 1.2rem;
+  margin: 0 0 2.5rem;
+}
+
+/* --- Prose --- */
 .eyebrow {
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
@@ -240,69 +277,31 @@ body {
   color: var(--gold);
   margin: 0 0 1rem;
 }
-.page-title {
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 400;
-  font-size: clamp(2.2rem, 5vw, 3.5rem);
-  color: var(--teal-deep);
-  margin: 0 0 2rem;
-  line-height: 1.1;
-}
 .prose h3 {
   font-family: "Cormorant Garamond", serif;
   font-weight: 500;
   font-size: 1.3rem;
   color: var(--teal-deep);
-  margin: 2.2rem 0 0.6rem;
-}
-.prose .lead {
-  font-size: 1.25rem;
-  font-style: italic;
-  color: var(--teal-deep);
-  border-left: 2px solid var(--gold);
-  padding-left: 1.2rem;
-  margin: 0 0 2rem;
+  margin: 2.2rem 0 0.8rem;
 }
 .prose p { margin: 0 0 1rem; color: var(--ink); }
-.prose ul.bullets, .prose ol.approaches {
-  padding-left: 1.2rem;
-  margin: 0 0 1.5rem;
-}
+.prose ul.bullets { padding-left: 1.2rem; margin: 0 0 1.5rem; }
 .prose ul.bullets li { margin: 0.4rem 0; }
+.prose ol.approaches { padding-left: 1.2rem; margin: 0 0 1.5rem; }
 .prose ol.approaches li { margin: 0.7rem 0; }
-.pull-quote {
-  font-family: "Sacramento", cursive;
-  font-size: 2rem;
-  color: var(--teal);
-  text-align: center;
-  margin: 3rem 0 1rem;
-  line-height: 1.3;
-}
 .muted { color: var(--ink-soft); font-style: italic; }
+.muted.small { font-size: 0.85rem; }
 
-/* Séries (grid) */
-.series {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
-  margin: 1rem 0 1.5rem;
-}
-.series article {
-  padding: 1.1rem 1.2rem;
-  background: rgba(255, 255, 255, 0.5);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-}
-.series h4 {
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 500;
-  font-size: 1.15rem;
-  margin: 0 0 0.4rem;
+.dropcap {
+  font-family: "Sacramento", cursive;
+  font-size: 3.5rem;
+  float: left;
+  line-height: 0.85;
+  padding: 0.25rem 0.5rem 0 0;
   color: var(--teal-deep);
 }
-.series p { margin: 0; font-size: 0.95rem; color: var(--ink-soft); }
 
-/* Sous-onglets (Mon univers → Sofi / Mon travail) */
+/* --- Sous-onglets --- */
 .sub-tabs {
   display: flex;
   gap: 0.5rem;
@@ -333,8 +332,7 @@ body {
   transform-origin: left;
   transition: transform .4s var(--ease);
 }
-.sub-tab:hover { color: var(--teal-deep); }
-.sub-tab.is-active { color: var(--teal-deep); }
+.sub-tab:hover, .sub-tab.is-active { color: var(--teal-deep); }
 .sub-tab.is-active::after { transform: scaleX(1); }
 
 .sub-panel { display: none; animation: fadeUp .5s var(--ease); }
@@ -344,37 +342,146 @@ body {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Bio (Sofi) : photo + texte */
-.bio {
-  display: grid;
-  grid-template-columns: 260px 1fr;
-  gap: 2.5rem;
-  align-items: start;
+/* --- Bio magazine (photo ronde en shape-outside) --- */
+.bio-mag {
+  position: relative;
 }
-.bio-photo {
-  margin: 0;
-  position: sticky;
-  top: 2rem;
+.bio-portrait {
+  float: left;
+  width: 260px;
+  aspect-ratio: 1 / 1;
+  margin: 0.4rem 2rem 1rem 0;
+  shape-outside: circle(50%);
+  shape-margin: 12px;
 }
-.bio-photo img {
+.bio-portrait img {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  height: 100%;
   object-fit: cover;
-  border-radius: var(--radius);
+  border-radius: 50%;
   box-shadow: var(--shadow);
 }
-.bio-text .lead {
-  font-family: "Sacramento", cursive;
-  font-size: 2.4rem;
-  font-style: normal;
-  border-left: none;
-  padding-left: 0;
-  color: var(--teal-deep);
-  margin: 0 0 1.5rem;
-  line-height: 1.2;
+.bio-text p:first-of-type { margin-top: 0; }
+.bio-text::after { content: ""; display: block; clear: both; }
+
+/* --- Empty state (sections en construction) --- */
+.empty-state {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  margin: 2rem 0;
 }
 
-/* Liens vers les textes */
+/* --- Feature link (manifeste) --- */
+.feature-link {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 0;
+  text-decoration: none;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin: 0 0 3rem;
+  transition: box-shadow .4s var(--ease), transform .4s var(--ease);
+}
+.feature-link:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-3px);
+}
+.feature-visual {
+  background-size: cover;
+  background-position: center;
+  min-height: 200px;
+}
+.feature-body { padding: 1.8rem 2rem; }
+.feature-body h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: var(--teal-deep);
+  margin: 0.4rem 0 0.8rem;
+}
+.feature-body p { margin: 0 0 1rem; color: var(--ink-soft); font-style: italic; }
+.feature-arrow {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* --- Carte Leaflet --- */
+.map-title {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: var(--teal-deep);
+  margin: 3rem 0 1rem;
+}
+.map {
+  width: 100%;
+  height: 420px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  margin: 0 0 2rem;
+}
+.leaflet-popup-content-wrapper { border-radius: 10px !important; }
+.leaflet-popup-content {
+  font-family: "Cormorant Garamond", serif !important;
+  font-size: 1rem !important;
+  color: var(--teal-deep) !important;
+}
+.leaflet-popup-content strong { display: block; font-size: 1.1rem; margin-bottom: 0.2rem; }
+.leaflet-popup-content em { font-family: "Montserrat", sans-serif; font-style: normal; font-size: 0.7rem; letter-spacing: 0.1em; color: var(--gold); text-transform: uppercase; }
+
+/* --- Points d'ancrage (fiches) --- */
+.anchors {
+  display: grid;
+  gap: 1.2rem;
+  margin: 1.5rem 0 2rem;
+}
+.anchor {
+  padding: 1.5rem 1.8rem;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  border-left: 3px solid var(--gold);
+}
+.anchor--pending {
+  background: transparent;
+  border-style: dashed;
+  border-left-style: dashed;
+  border-left-color: var(--line);
+}
+.anchor-num {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 0.4rem;
+}
+.anchor h4 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-size: 1.4rem;
+  color: var(--teal-deep);
+  margin: 0 0 0.3rem;
+}
+.anchor-coord {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  margin: 0 0 0.8rem;
+}
+
+/* --- Textes à lire --- */
 .text-links {
   margin: 3rem 0 0;
   padding: 2rem 0 0;
@@ -416,30 +523,38 @@ body {
 }
 .text-links a span { color: var(--gold); font-size: 1rem; }
 
-@media (max-width: 720px) {
-  .bio { grid-template-columns: 1fr; gap: 1.5rem; }
-  .bio-photo { position: static; max-width: 260px; margin: 0 auto; }
-  .bio-text .lead { font-size: 2rem; text-align: center; }
-  .sub-tab { padding: 0.7rem 0.9rem; font-size: 0.7rem; letter-spacing: 0.15em; }
+/* --- Forum block (ressources) --- */
+.forum-block {
+  margin: 3rem 0 2rem;
+  padding: 2rem;
+  background: rgba(127, 176, 190, 0.1);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--gold);
+  border-radius: var(--radius);
 }
-
-/* Liens externes */
-.link-out {
-  margin: 1.5rem 0 0;
-  font-family: "Montserrat", sans-serif;
-  font-size: 0.85rem;
-  letter-spacing: 0.05em;
-}
-.link-out a {
+.forum-block h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.5rem;
   color: var(--teal-deep);
-  text-decoration: none;
-  border-bottom: 1px solid var(--gold);
-  padding-bottom: 2px;
-  transition: color .3s var(--ease), border-color .3s var(--ease);
+  margin: 0 0 0.6rem;
 }
-.link-out a:hover { color: var(--gold); border-color: var(--teal-deep); }
+.btn-primary {
+  display: inline-block;
+  padding: 0.9rem 1.5rem;
+  background: var(--teal-deep);
+  color: var(--bg);
+  border-radius: 999px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin: 1rem 0;
+  transition: background .3s var(--ease), transform .3s var(--ease);
+}
+.btn-primary:hover { background: var(--teal); transform: translateY(-2px); }
 
-/* --- View navigation --- */
+/* --- Nav entre sections --- */
 .view-nav {
   display: flex;
   justify-content: space-between;
@@ -470,53 +585,47 @@ body {
 }
 .view-nav .nav-next { margin-left: auto; }
 
-/* --- Reveal on scroll/enter --- */
+/* --- Reveal au scroll --- */
 .reveal {
   opacity: 0;
   transform: translateY(24px);
   transition: opacity .8s var(--ease), transform .8s var(--ease);
 }
-.reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
 
 /* --- Grand écran / vidéoprojecteur --- */
 @media (min-width: 1600px) {
   .cards { max-width: 1500px; gap: 2.2rem; }
-  .card { padding: 2.8rem 2.4rem; }
+  .card { padding: 2.8rem 2.4rem 4rem; }
   .card h2 { font-size: 2.1rem; }
-  .card p { font-size: 1.25rem; }
-  .card-num, .eyebrow, .brand-sub { font-size: 0.95rem; }
-  .page { max-width: 1000px; }
+  .page { max-width: 1050px; }
   .contact { max-width: 1300px; gap: 4rem; }
   .portrait-frame { max-width: 340px; }
+  .bio-portrait { width: 340px; }
 }
 @media (min-width: 1920px) {
   .cards { max-width: 1720px; }
-  .brand { font-size: clamp(7rem, 9vw, 11rem); }
-  .tagline { font-size: 1.9rem; max-width: 48ch; }
-  .page-title { font-size: 4.5rem; }
-  .prose .lead { font-size: 1.7rem; }
-  .prose h3 { font-size: 1.8rem; }
+  .brand { font-size: clamp(8rem, 10vw, 13rem); }
+  .section-title { font-size: 5rem; }
 }
 
 /* --- Tablette --- */
 @media (max-width: 900px) {
   .cards { grid-template-columns: repeat(2, 1fr); }
+  .feature-link { grid-template-columns: 1fr; }
+  .feature-visual { min-height: 220px; }
 }
 
 /* --- Mobile --- */
 @media (max-width: 720px) {
   body { font-size: 17px; }
   .view { padding: 2.5rem 1.1rem 3rem; }
-  .brand { font-size: 4.5rem; }
+  .brand { font-size: 5.5rem; }
   .brand-sub { font-size: 0.7rem; letter-spacing: 0.3em; }
   .tagline { font-size: 1.15rem; padding: 0 0.5rem; }
   .cards { grid-template-columns: 1fr; gap: 1rem; padding: 1.5rem 0; }
-  .card { padding: 1.5rem 1.3rem; }
+  .card { padding: 1.5rem 1.3rem 2.5rem; }
   .card h2 { font-size: 1.35rem; }
-  .card p { font-size: 0.95rem; }
   .card-arrow { bottom: 1rem; right: 1.2rem; font-size: 1.2rem; }
   .contact {
     grid-template-columns: 1fr;
@@ -525,21 +634,19 @@ body {
     margin: 3.5rem auto 1.5rem;
   }
   .portrait { max-width: 220px; margin: 0 auto; }
-  .contact-info h2 { font-size: 1.5rem; }
   .contact-list li { justify-content: center; flex-wrap: wrap; gap: 0.4rem; }
   .contact-list span { min-width: 0; }
-  .socials { justify-content: center; }
-  .page-title { font-size: 2rem; }
-  .prose .lead { font-size: 1.1rem; padding-left: 0.9rem; }
-  .prose h3 { font-size: 1.2rem; margin-top: 1.8rem; }
-  .pull-quote { font-size: 1.6rem; margin: 2rem 0 0.5rem; }
+  .forum-link { margin-left: 0; }
+  .section-title { font-size: 2rem; gap: 0.8rem; }
+  .section-num { font-size: 0.75rem; padding: 0.3rem 0.6rem; }
+  .sub-lead { font-size: 1.1rem; padding-left: 0.9rem; }
+  .bio-portrait { float: none; width: 220px; margin: 0 auto 1.5rem; display: block; }
+  .bio-text::after { content: none; }
+  .dropcap { font-size: 3rem; }
   .view-nav { justify-content: center; gap: 0.6rem; margin-top: 3rem; padding-top: 1.5rem; }
   .view-nav a { padding: 0.6rem 1rem; font-size: 0.7rem; letter-spacing: 0.15em; }
   .view-nav .nav-next { margin-left: 0; }
-}
-@media (max-width: 380px) {
-  .brand { font-size: 3.8rem; }
-  .view-nav a { flex: 1; text-align: center; }
+  .map { height: 320px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

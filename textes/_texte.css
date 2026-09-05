@@ -6,11 +6,39 @@ body.texte {
   min-height: 100vh;
 }
 body.texte .page { max-width: 720px; margin: 0 auto; }
-body.texte .prose p { margin: 1rem 0; font-size: 1.15rem; line-height: 1.7; }
-body.texte .prose p.stanza { white-space: pre-line; font-style: italic; color: var(--teal-deep); }
+body.texte .prose { text-align: center; }
+body.texte .prose .verse {
+  margin: 0.9rem 0;
+  font-size: clamp(1.1rem, 1.4vw, 1.35rem);
+  line-height: 1.5;
+  color: var(--teal-deep);
+  font-style: italic;
+}
+body.texte .prose .verse-strong {
+  font-weight: 500;
+  font-style: normal;
+  color: var(--ink);
+}
+body.texte .prose .verse-spacer { height: 1rem; }
+body.texte .prose p { text-align: left; }
+
+body.texte .page-title {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  color: var(--teal-deep);
+  margin: 0 0 2.5rem;
+  line-height: 1.1;
+  text-align: center;
+}
+body.texte .eyebrow {
+  text-align: center;
+  margin-bottom: 0.8rem;
+}
+
 body.texte .back-link {
   display: inline-block;
-  margin: 3rem 0 0;
+  margin: 3rem auto 0;
   font-family: "Montserrat", sans-serif;
   font-size: 0.8rem;
   letter-spacing: 0.2em;
@@ -25,4 +53,47 @@ body.texte .back-link {
 body.texte .back-link:hover {
   background: var(--teal-deep);
   color: var(--bg);
+}
+body.texte .center { text-align: center; }
+
+/* Manifeste : visuel large */
+body.texte .manifesto-hero {
+  width: 100%;
+  aspect-ratio: 16 / 6;
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin: 0 0 3rem;
+}
+body.texte .manifesto-body p {
+  margin: 1.1rem 0;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  text-align: left;
+}
+body.texte .manifesto-body p:first-of-type {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--teal-deep);
+  text-align: center;
+  border-left: none;
+}
+body.texte .signature {
+  font-family: "Sacramento", cursive;
+  font-size: 2.4rem;
+  color: var(--teal-deep);
+  text-align: center;
+  margin: 2rem 0 0.2rem;
+  line-height: 1;
+}
+body.texte .signature-sub {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-align: center;
+  margin: 0 0 2rem;
 }

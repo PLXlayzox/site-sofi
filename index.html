@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sofi — artiste du vivant</title>
-  <meta name="description" content="Sofi, artiste du vivant. Cartographie sensible, œuvres, ressources et univers artistique." />
+  <meta name="description" content="Sofi, artiste du vivant. Cartographie sensible, univers, entreprise et ressources." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -15,8 +15,8 @@
   <!-- Home / accueil -->
   <section class="view is-active" id="accueil" data-view="accueil">
     <header class="hero">
-      <h1 class="brand">sofi</h1>
-      <p class="brand-sub">— artiste du vivant —</p>
+      <h1 class="brand">Sofi</h1>
+      <p class="brand-sub">artiste du vivant</p>
       <p class="tagline reveal">Révéler ce qui nous relie, ce qui parfois échappe aux mots.</p>
     </header>
 
@@ -24,28 +24,24 @@
       <button class="card reveal" data-goto="univers">
         <span class="card-num">01</span>
         <h2>Mon univers</h2>
-        <p>Sofi et son travail — parcours, matières, séries.</p>
         <span class="card-arrow">→</span>
       </button>
 
       <button class="card reveal" data-goto="cartographie">
         <span class="card-num">02</span>
         <h2>Cartographie sensible du vivant</h2>
-        <p>Révéler l'identité sensible d'un lieu, d'un territoire, d'une organisation.</p>
         <span class="card-arrow">→</span>
       </button>
 
-      <button class="card reveal" data-goto="administratif">
+      <button class="card reveal" data-goto="entreprise">
         <span class="card-num">03</span>
-        <h2>Partie administrative</h2>
-        <p>Œuvres à la vente, commandes, modalités pratiques.</p>
+        <h2>Mon entreprise</h2>
         <span class="card-arrow">→</span>
       </button>
 
       <button class="card reveal" data-goto="ressources">
         <span class="card-num">04</span>
         <h2>Espace ressources</h2>
-        <p>Un espace pensé pour les étudiantes et étudiants.</p>
         <span class="card-arrow">→</span>
       </button>
     </nav>
@@ -56,18 +52,23 @@
       </div>
 
       <div class="contact-info">
-        <h2>Prendre contact</h2>
-        <p class="contact-lead">Pour un projet, une commande, un portrait ou simplement échanger autour de la création.</p>
         <ul class="contact-list">
           <li><span>Téléphone</span><a href="tel:+33637200002">06 37 20 00 02</a></li>
-          <li><span>Contact</span><a href="https://art-sofi.com/contact/" target="_blank" rel="noopener">Formulaire de contact</a></li>
-          <li><span>Boutique</span><a href="https://mainscreatives53.fr/" target="_blank" rel="noopener">Mains créatives 53 — Château-Gontier</a></li>
+          <li><span>Email</span><a href="mailto:sophielenfant24@proton.me">sophielenfant24@proton.me</a></li>
+          <li><span>Site</span><a href="https://www.art-sofi.com" target="_blank" rel="noopener">www.art-sofi.com</a></li>
+          <li><span>Instagram</span><a href="https://www.instagram.com/sofi.artiste.bienveilleuse" target="_blank" rel="noopener">@sofi.artiste.bienveilleuse</a></li>
+          <li><span>Facebook</span><a href="#" target="_blank" rel="noopener" title="Lien à venir">Facebook</a></li>
         </ul>
-        <ul class="socials" aria-label="Réseaux sociaux">
-          <li><a href="#" aria-label="Instagram" target="_blank" rel="noopener">Instagram</a></li>
-          <li><a href="#" aria-label="Facebook" target="_blank" rel="noopener">Facebook</a></li>
-          <li><a href="#" aria-label="X" target="_blank" rel="noopener">X</a></li>
-        </ul>
+
+        <div class="forum-link">
+          <a href="https://github.com/PLXlayzox/site-sofi/discussions" target="_blank" rel="noopener">
+            <span class="forum-arrow">↳</span>
+            <span>
+              <strong>Forum étudiants</strong>
+              <em>espace d'échange — inscription requise pour poster</em>
+            </span>
+          </a>
+        </div>
       </div>
     </footer>
 
@@ -77,8 +78,7 @@
   <!-- 01 — Mon univers -->
   <section class="view" id="univers" data-view="univers">
     <div class="page">
-      <p class="eyebrow">01 — Mon univers</p>
-      <h1 class="page-title">Mon univers</h1>
+      <h1 class="section-title"><span class="section-num">01</span> Mon univers</h1>
 
       <!-- Sous-espaces -->
       <nav class="sub-tabs" aria-label="Sous-sections de Mon univers">
@@ -86,26 +86,23 @@
         <button class="sub-tab" data-sub="travail">Mon travail</button>
       </nav>
 
-      <!-- Sofi -->
+      <!-- Sofi : layout magazine (photo ronde + texte wrap) -->
       <div class="sub-panel is-active" data-panel="sofi">
-        <div class="bio">
-          <figure class="bio-photo">
+        <div class="bio-mag">
+          <figure class="bio-portrait">
             <img src="assets/portrait-sofi.jpg" alt="Portrait de Sofi" loading="lazy" />
           </figure>
 
           <div class="prose bio-text">
-            <p class="lead">Je suis Sofi. Artiste du vivant.</p>
-
-            <p>Je suis stable, solide et profondément ancrée. Je suis celle qui cherche la beauté, les couleurs et la lumière. Amoureuse de la nature, de la musique, de la danse et du mouvement. Passionnée par les relations humaines et fascinée par ce qui relie les êtres.</p>
-
-            <p>Je choisis de nourrir la joie. Je mets un point d'honneur à prendre plaisir dans tout ce que je fais. Créer, partager, transmettre, apprendre… chaque expérience est une occasion de célébrer le vivant. Un brin loufoque, j'entretiens ma part de fantaisie. Éternelle optimiste, je crois que la beauté peut transformer un regard, une journée… parfois davantage. J'essaie de rendre le monde un peu plus beau… et je continue d'y croire, obstinément.</p>
+            <p><span class="dropcap">J</span>e suis Sofi. Artiste du vivant. Je suis stable, solide et profondément ancrée. Je suis celle qui cherche la beauté, les couleurs et la lumière. Amoureuse de la nature, de la musique, de la danse et du mouvement. Passionnée par les relations humaines et fascinée par ce qui relie les êtres. Je choisis de nourrir la joie. Je mets un point d'honneur à prendre plaisir dans tout ce que je fais. Créer, partager, transmettre, apprendre… chaque expérience est une occasion de célébrer le vivant. Un brin loufoque, j'entretiens ma part de fantaisie. Éternelle optimiste, je crois que la beauté peut transformer un regard, une journée… parfois davantage. J'essaie de rendre le monde un peu plus beau… et je continue d'y croire, obstinément.</p>
 
             <h3>Je révèle…</h3>
+
             <p>Créer est une nécessité. Sortir des cadres. Ne pas rester figée. Explorer, sentir, vivre en présence, en lien…</p>
 
             <p>Bien que formée aux arts appliqués, je suis grandement autodidacte. Mon inspiration naît de la vie, des émotions, des rencontres et de ces instants fugaces qui laissent une empreinte.</p>
 
-            <p>Je révèle. C'est mon travail d'artiste. Je suis une artiste du vivant. J'aspire à montrer ce qui est beau, parfois même ce qui est invisible pour les yeux. J'invite à la contemplation, j'espère créer un moment d'arrêt, de prise de conscience ou juste une respiration.</p>
+            <p>Je révèle. C'est mon travail d'artiste. <strong>Je suis une artiste du vivant.</strong> J'aspire à montrer ce qui est beau, parfois même ce qui est invisible pour les yeux. J'invite à la contemplation, j'espère créer un moment d'arrêt, de prise de conscience ou juste une respiration.</p>
 
             <p>Je communie avec la nature, parle aux dragons et favorise le travail des fées. Je suis ancrée, consciente et présente au vivant. Je choisis mon énergie et la manière dont je l'utilise, autant de magie qui traverse mes œuvres.</p>
 
@@ -129,17 +126,10 @@
         </div>
       </div>
 
-      <!-- Mon travail -->
+      <!-- Mon travail : vide en attente -->
       <div class="sub-panel" data-panel="travail">
-        <div class="prose">
-          <p class="lead muted">Cet espace est en cours de préparation.</p>
-          <p>Une présentation détaillée du travail de Sofi — séries, matières, techniques, projets récents — arrivera bientôt.</p>
-
-          <h3>En attendant</h3>
-          <ul class="bullets">
-            <li><a href="https://art-sofi.com/portfolio-2/" target="_blank" rel="noopener">Parcourir le portfolio sur art-sofi.com ↗</a></li>
-            <li><a href="https://art-sofi.com/catalogue/" target="_blank" rel="noopener">Voir le catalogue des œuvres à la vente ↗</a></li>
-          </ul>
+        <div class="empty-state">
+          <p class="muted">Cet espace est en cours de préparation. Le contenu arrive bientôt.</p>
         </div>
       </div>
 
@@ -153,84 +143,103 @@
   <!-- 02 — Cartographie sensible -->
   <section class="view" id="cartographie" data-view="cartographie">
     <div class="page">
-      <p class="eyebrow">02 — Cartographie sensible</p>
-      <h1 class="page-title">Cartographie sensible du vivant</h1>
+      <h1 class="section-title"><span class="section-num">02</span> Cartographie sensible du vivant</h1>
+      <p class="sub-lead">Révéler l'identité sensible d'un lieu, d'un territoire ou d'une organisation. Parce que le vivant mérite notre présence.</p>
 
+      <!-- Lien vers le manifeste -->
+      <a href="textes/manifeste.html" class="feature-link">
+        <div class="feature-visual" style="background-image: url('assets/manifeste-loup.jpg');"></div>
+        <div class="feature-body">
+          <p class="eyebrow">Texte</p>
+          <h3>Manifeste artistique</h3>
+          <p>Parce que le vivant mérite qu'on s'y attarde.</p>
+          <span class="feature-arrow">Lire le manifeste →</span>
+        </div>
+      </a>
+
+      <!-- Trame du projet -->
       <div class="prose">
-        <p class="lead">Révéler l'identité sensible d'un lieu, d'un territoire ou d'une organisation. Parce que le vivant mérite notre présence.</p>
+        <h3>Une œuvre en mouvement</h3>
+        <p>La Cartographie sensible du vivant est une œuvre en mouvement. Chaque nouveau point d'ancrage enrichit une géographie sensible faite de rencontres, de récits et de création artistique.</p>
 
-        <h3>Le principe</h3>
-        <p>Chaque projet est conçu sur mesure à partir de l'histoire et de la singularité du lieu — ses mémoires, ses récits, ses symboles invisibles, les liens qui l'habitent.</p>
+        <p>Je désire intensément la liberté du lien simple et essentiel, la liberté de notre lien intime et puissant avec la terre, avec ce qui respire, avec ce qui ne demande rien d'autre que de la présence. Parce que c'est là que tout commence. Quand je ralentis, quand je suis posée, ancrée, calme, à l'écoute de mon corps et du vivant qui m'entoure, alors quelque chose apparaît.</p>
 
-        <h3>Pour qui</h3>
+        <p>Je suis sensible à ce qui ne se voit pas. Le monde est habité par beaucoup plus que ce que nos yeux peuvent voir. Présences silencieuses, énergies particulières, puissantes, équilibrantes, autant de réalités qui nous relient à quelque chose de plus vaste que nous. C'est cet espace que j'explore.</p>
+
+        <p>Au fil de mon exploration, j'aspire à révéler ce qui habite le monde. Révéler l'identité sensible des lieux, des territoires et des organisations est aujourd'hui l'un des chemins par lesquels cette recherche prend forme.</p>
+
+        <h3>Qu'est-ce qu'une cartographie sensible ?</h3>
+        <p>Une cartographie sensible cherche à révéler ce qui rend un territoire unique. Chaque lieu possède une mémoire, des récits, des symboles, des paysages, des savoir-faire et des liens invisibles qui façonnent son identité.</p>
+
+        <p>À travers la rencontre, l'observation et la création artistique, je cherche à faire émerger cette identité sensible et à lui donner une forme visible. Chaque œuvre devient alors un point d'ancrage. Peu à peu, ces points composent une cartographie vivante faite de lieux, d'histoires et de rencontres.</p>
+
+        <p><strong>Une œuvre peut révéler :</strong></p>
         <ul class="bullets">
-          <li>Collectivités, territoires, tiers-lieux qui souhaitent incarner leur identité.</li>
-          <li>Entreprises et organisations en transformation — donner forme à une culture, un cap, une histoire commune.</li>
-          <li>Lieux de vie, espaces publics, bâtiments — révéler leur présence et leur âme.</li>
-          <li>Publics spécifiques — créations participatives sur mesure.</li>
+          <li>un territoire</li>
+          <li>un village</li>
+          <li>un paysage</li>
+          <li>une entreprise</li>
+          <li>un patrimoine</li>
+          <li>une mémoire collective</li>
+          <li>un lieu de vie…</li>
         </ul>
 
-        <h3>La démarche — trois temps</h3>
+        <h3>Une démarche en trois temps</h3>
         <ol class="approaches">
-          <li><strong>Écouter.</strong> Rencontrer les personnes, observer les espaces, recueillir les histoires, les valeurs, les caractéristiques distinctives.</li>
-          <li><strong>Relier.</strong> Identifier les identités visuelles existantes, les motifs récurrents, les symboles vivants, ce qui relie les gens, les paysages et les activités.</li>
-          <li><strong>Révéler.</strong> Créer une œuvre ou une fresque singulière, poétique, qui donne à voir cette identité sensible.</li>
+          <li><strong>Écouter.</strong> Rencontrer les habitants, les acteurs et les mémoires du lieu.</li>
+          <li><strong>Révéler.</strong> Faire émerger les symboles, récits et singularités.</li>
+          <li><strong>Créer.</strong> Donner forme à cette identité sensible.</li>
         </ol>
 
-        <h3>Livrables possibles</h3>
-        <ul class="bullets">
-          <li>Fresques murales pour sièges d'entreprise et espaces d'accueil.</li>
-          <li>Œuvres identitaires pour territoires et collectivités.</li>
-          <li>Créations participatives avec des publics ciblés.</li>
-          <li>Installations artistiques et séries inspirées du patrimoine naturel ou culturel.</li>
-        </ul>
+        <h3>Une œuvre en déploiement</h3>
+        <p>Chaque œuvre naît d'une rencontre avec un lieu, son histoire, ses habitants, son imaginaire ou les présences qui l'habitent. À travers la peinture, les fresques et les créations in situ, je cherche à révéler l'identité sensible des territoires. Chaque réalisation devient un point d'ancrage, une trace visible d'une rencontre.</p>
 
-        <p class="link-out"><a href="https://art-sofi.com/cartographie-sensible-du-vivant/" target="_blank" rel="noopener">Découvrir la démarche complète sur art-sofi.com ↗</a></p>
+        <p>La Cartographie sensible du vivant est une œuvre territoriale évolutive. À terme, cette œuvre reliera des communes, des patrimoines, des organisations et des paysages à travers un réseau de créations uniques.</p>
+
+        <p class="muted">La cartographie est ouverte. Les prochains points d'ancrage naîtront des territoires, lieux et organisations qui souhaiteront prendre part à cette aventure artistique.</p>
+      </div>
+
+      <!-- Carte des points d'ancrage -->
+      <h3 class="map-title">Points d'ancrage</h3>
+      <div id="carte-mayenne" class="map"></div>
+
+      <!-- Fiches points d'ancrage -->
+      <div class="anchors">
+        <article class="anchor">
+          <p class="anchor-num">📍 Point d'ancrage n°001</p>
+          <h4>Le Dragon de Fromentières</h4>
+          <p class="anchor-coord">47°51'49.3&quot;N — 0°39'57.7&quot;W · Mayenne</p>
+          <p>Première manifestation de la Cartographie sensible du vivant. Réalisée à Fromentières en Mayenne, cette fresque marque le premier point d'ancrage de l'œuvre. Chaque nouveau lieu rejoint progressivement une cartographie artistique révélant les singularités du vivant à travers les territoires.</p>
+        </article>
+
+        <article class="anchor">
+          <p class="anchor-num">📍 Point d'ancrage n°002</p>
+          <h4>Les animaux du refuge de l'Arche</h4>
+          <p class="anchor-coord">47°48'29.5&quot;N — 0°42'27.6&quot;W · Mayenne</p>
+          <p class="muted">Présentation à venir.</p>
+        </article>
+
+        <article class="anchor anchor--pending">
+          <p class="anchor-num">📍 Point d'ancrage n°003</p>
+          <h4>En prévision</h4>
+          <p class="muted">Le prochain point d'ancrage sera bientôt révélé.</p>
+        </article>
       </div>
 
       <nav class="view-nav">
         <a href="#accueil" class="nav-back" data-goto="accueil">↺ Accueil</a>
-        <a href="#administratif" class="nav-next" data-goto="administratif">Partie administrative →</a>
+        <a href="#entreprise" class="nav-next" data-goto="entreprise">Mon entreprise →</a>
       </nav>
     </div>
   </section>
 
-  <!-- 03 — Administratif -->
-  <section class="view" id="administratif" data-view="administratif">
+  <!-- 03 — Mon entreprise -->
+  <section class="view" id="entreprise" data-view="entreprise">
     <div class="page">
-      <p class="eyebrow">03 — Informations pratiques</p>
-      <h1 class="page-title">Partie administrative</h1>
+      <h1 class="section-title"><span class="section-num">03</span> Mon entreprise</h1>
 
-      <div class="prose">
-        <p class="lead">Les modalités qui encadrent les œuvres, projets et collaborations.</p>
-
-        <h3>Prestations</h3>
-        <ul class="bullets">
-          <li>Œuvres originales — acrylique sur bois (OSB, panneaux), toile ou support recyclé.</li>
-          <li>Portraits sur commande.</li>
-          <li>Fresques et interventions in situ.</li>
-          <li>Ateliers, cours et missions de cartographie sensible.</li>
-        </ul>
-
-        <h3>Œuvres à la vente</h3>
-        <p>Une sélection d'œuvres est disponible en permanence — petits formats à partir d'environ <strong>55&nbsp;€</strong>, formats moyens autour de <strong>150–250&nbsp;€</strong>, grandes pièces jusqu'à <strong>440&nbsp;€</strong>. Des tirages d'art en édition limitée sont également proposés.</p>
-        <p class="link-out">
-          <a href="https://art-sofi.com/catalogue/" target="_blank" rel="noopener">Voir le catalogue complet ↗</a>
-          &nbsp;·&nbsp;
-          <a href="https://art-sofi.com/portfolio-2/" target="_blank" rel="noopener">Parcourir le portfolio ↗</a>
-        </p>
-
-        <h3>Boutique physique</h3>
-        <p>Une partie des œuvres est exposée à <strong>Mains créatives 53</strong>, boutique de créateurs à Château-Gontier (Mayenne).</p>
-
-        <h3>Commande &amp; devis</h3>
-        <p>Chaque projet fait l'objet d'un échange préalable — nature du support, format, contexte, calendrier. Un devis est établi après cette première rencontre. Un acompte est demandé à la commande.</p>
-
-        <h3>Livraison &amp; expédition</h3>
-        <p>Retrait en atelier, remise en main propre ou expédition sécurisée selon le format. Les frais d'envoi sont ajoutés au devis.</p>
-
-        <h3>Mentions légales</h3>
-        <p class="muted">Statut, SIRET, coordonnées légales — à compléter.</p>
+      <div class="empty-state">
+        <p class="muted">Cet espace est en cours de préparation. Le contenu arrive bientôt.</p>
       </div>
 
       <nav class="view-nav">
@@ -243,26 +252,17 @@
   <!-- 04 — Ressources -->
   <section class="view" id="ressources" data-view="ressources">
     <div class="page">
-      <p class="eyebrow">04 — Étudiantes &amp; étudiants</p>
-      <h1 class="page-title">Espace ressources</h1>
+      <h1 class="section-title"><span class="section-num">04</span> Espace ressources</h1>
 
-      <div class="prose">
-        <p class="lead">Un espace pensé pour accompagner celles et ceux qui apprennent — références, lectures, gestes, matières.</p>
+      <div class="empty-state">
+        <p class="muted">Cet espace est en cours de préparation. Le contenu arrive bientôt.</p>
+      </div>
 
-        <h3>Cours et ateliers</h3>
-        <p>Sofi anime régulièrement <strong>des cours</strong> et <strong>des ateliers</strong>, en petit groupe ou en individuel. Peinture acrylique, exploration du geste, travail sur supports recyclés, cartographie sensible en atelier.</p>
-
-        <h3>À venir dans cet espace</h3>
-        <ul class="bullets">
-          <li>Fiches pratiques — préparer un support, mélanger les couleurs, poser la matière.</li>
-          <li>Bibliographie sensible autour du vivant et de la création.</li>
-          <li>Retours d'ateliers et carnets de travail.</li>
-          <li>Ressources téléchargeables (PDF).</li>
-        </ul>
-
-        <p class="muted">Cet espace se construit petit à petit. Les premiers contenus arrivent bientôt.</p>
-
-        <p class="link-out"><a href="https://art-sofi.com/actualite/" target="_blank" rel="noopener">Actualités des cours & ateliers ↗</a></p>
+      <div class="forum-block">
+        <h3>Forum étudiants</h3>
+        <p>Un espace d'échange pour poser des questions, partager des travaux et discuter avec Sofi.</p>
+        <a href="https://github.com/PLXlayzox/site-sofi/discussions" target="_blank" rel="noopener" class="btn-primary">Ouvrir le forum ↗</a>
+        <p class="muted small">Hébergé sur GitHub Discussions. Une inscription (gratuite) est nécessaire pour poster. Sofi reçoit une notification par email à chaque nouveau message.</p>
       </div>
 
       <nav class="view-nav">
@@ -272,6 +272,9 @@
     </div>
   </section>
 
-  <script src="assets/main.js"></script>
+  <!-- Leaflet pour la carte des points d'ancrage -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+  <script src="assets/main.js" defer></script>
 </body>
 </html>
