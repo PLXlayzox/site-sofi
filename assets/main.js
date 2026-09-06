@@ -90,7 +90,7 @@ const lbImg = lb?.querySelector('.lightbox-img');
 const lbClose = lb?.querySelector('.lightbox-close');
 
 document.addEventListener('click', (e) => {
-  const img = e.target.closest('.gallery img, .article-figure img');
+  const img = e.target.closest('.gallery img, .article-figure img, .mosaic img');
   if (!img || !lb || !lbImg) return;
   lbImg.src = img.src;
   lbImg.alt = img.alt || '';
