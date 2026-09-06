@@ -62,11 +62,11 @@
         </ul>
 
         <div class="forum-link">
-          <a href="https://github.com/PLXlayzox/site-sofi/discussions" target="_blank" rel="noopener">
+          <a href="#ressources" data-goto="ressources">
             <span class="forum-arrow">↳</span>
             <span>
               <strong>Forum étudiants</strong>
-              <em>espace d'échange — inscription requise pour poster</em>
+              <em>espace d'échange intégré — voir dans « Espace ressources »</em>
             </span>
           </a>
         </div>
@@ -429,9 +429,30 @@
 
       <div class="forum-block">
         <h3 class="h-sub">Forum étudiants</h3>
-        <p>Un espace d'échange pour poser des questions, partager des travaux et discuter avec Sofi.</p>
-        <a href="https://github.com/PLXlayzox/site-sofi/discussions" target="_blank" rel="noopener" class="btn-primary">Ouvrir le forum ↗</a>
-        <p class="muted small">Hébergé sur GitHub Discussions. Une inscription (gratuite) est nécessaire pour poster. Sofi reçoit une notification par email à chaque nouveau message.</p>
+        <p>Un espace d'échange intégré pour poser des questions, partager des travaux et discuter avec Sofi. Connectez-vous avec un compte GitHub (gratuit) pour poster.</p>
+
+        <!-- Giscus (GitHub Discussions) -->
+        <div id="giscus-container">
+          <script src="https://giscus.app/client.js"
+                  data-repo="PLXlayzox/site-sofi"
+                  data-repo-id="R_kgDOUNnI3A"
+                  data-category="Q&A"
+                  data-category-id="DIC_kwDOUNnI3M4DE6EQ"
+                  data-mapping="specific"
+                  data-term="Forum étudiants"
+                  data-strict="1"
+                  data-reactions-enabled="1"
+                  data-emit-metadata="0"
+                  data-input-position="top"
+                  data-theme="light"
+                  data-lang="fr"
+                  data-loading="lazy"
+                  crossorigin="anonymous"
+                  async>
+          </script>
+        </div>
+
+        <p class="muted small">Hébergé sur GitHub Discussions via Giscus. Sofi reçoit un email à chaque nouveau message (elle « watch » le repo).</p>
       </div>
 
       <nav class="view-nav">

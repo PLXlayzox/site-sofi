@@ -6,21 +6,6 @@ body.texte {
   min-height: 100vh;
 }
 body.texte .page { max-width: 720px; margin: 0 auto; }
-body.texte .prose { text-align: center; }
-body.texte .prose .verse {
-  margin: 0.9rem 0;
-  font-size: clamp(1.1rem, 1.4vw, 1.35rem);
-  line-height: 1.5;
-  color: var(--teal-deep);
-  font-style: italic;
-}
-body.texte .prose .verse-strong {
-  font-weight: 500;
-  font-style: normal;
-  color: var(--ink);
-}
-body.texte .prose .verse-spacer { height: 1rem; }
-body.texte .prose p { text-align: left; }
 
 body.texte .page-title {
   font-family: "Cormorant Garamond", serif;
@@ -36,43 +21,35 @@ body.texte .eyebrow {
   margin-bottom: 0.8rem;
 }
 
-body.texte .back-link {
-  display: inline-block;
-  margin: 3rem auto 0;
-  font-family: "Montserrat", sans-serif;
-  font-size: 0.8rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  text-decoration: none;
+/* --- Textes en vers (Peindre / Les cadres / Le monde a besoin de toi) --- */
+body.texte .prose .verse {
+  display: block;
+  text-align: center;
+  margin: 0.9rem auto;
+  font-size: clamp(1.1rem, 1.4vw, 1.35rem);
+  line-height: 1.5;
   color: var(--teal-deep);
-  padding: 0.7rem 1.2rem;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  transition: background .3s var(--ease), color .3s var(--ease);
+  font-style: italic;
+  max-width: 40rem;
+  hyphens: none;
 }
-body.texte .back-link:hover {
-  background: var(--teal-deep);
-  color: var(--bg);
+body.texte .prose .verse-strong {
+  font-weight: 500;
+  font-style: normal;
+  color: var(--ink);
 }
-body.texte .center { text-align: center; }
+body.texte .prose .verse-spacer { height: 1rem; }
 
-/* Manifeste : visuel large */
-body.texte .manifesto-hero {
-  width: 100%;
-  aspect-ratio: 16 / 6;
-  background-size: cover;
-  background-position: center;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  margin: 0 0 3rem;
-}
-body.texte .manifesto-body p {
+/* --- Textes en prose (Le mot du refuge, futurs textes narratifs) --- */
+body.texte .prose.manifesto-body p,
+body.texte .prose p:not(.verse):not(.eyebrow) {
+  text-align: justify;
+  hyphens: auto;
   margin: 1.1rem 0;
   font-size: 1.1rem;
   line-height: 1.7;
-  text-align: left;
 }
-body.texte .manifesto-body p:first-of-type {
+body.texte .prose.manifesto-body p:first-of-type {
   font-family: "Cormorant Garamond", serif;
   font-style: italic;
   font-size: 1.3rem;
@@ -97,3 +74,24 @@ body.texte .signature-sub {
   text-align: center;
   margin: 0 0 2rem;
 }
+
+/* --- Retour --- */
+body.texte .back-link {
+  display: inline-block;
+  margin: 3rem auto 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--teal-deep);
+  padding: 0.7rem 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  transition: background .3s var(--ease), color .3s var(--ease);
+}
+body.texte .back-link:hover {
+  background: var(--teal-deep);
+  color: var(--bg);
+}
+body.texte .center { text-align: center; }
