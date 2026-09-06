@@ -42,20 +42,57 @@ body {
 }
 .view.is-active { display: block; opacity: 1; transform: translateY(0); }
 
-/* --- Hero (logo image) --- */
+/* --- Hero (bandeau logo + visuel) --- */
 .hero {
   text-align: center;
-  padding: clamp(1rem, 4vh, 3rem) 0 clamp(2rem, 6vh, 4rem);
+  padding: 0 0 clamp(2rem, 6vh, 4rem);
+}
+.bandeau {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto clamp(1.5rem, 4vh, 3rem);
+  aspect-ratio: 21 / 8;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  isolation: isolate;
+}
+.bandeau-visual {
+  position: absolute; inset: 0;
+  background-size: cover;
+  background-position: center 30%;
+  z-index: -1;
+}
+.bandeau::after {
+  /* Voile blanc/ivoire sur le côté logo pour la lisibilité */
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(244,239,230,0.95) 0%, rgba(244,239,230,0.85) 40%, rgba(244,239,230,0.05) 70%, transparent 100%);
+  z-index: 0;
 }
 .brand {
+  position: relative;
+  z-index: 1;
   margin: 0;
-  line-height: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 4% 0 5%;
 }
 .brand-logo {
-  max-width: min(420px, 70vw);
+  max-width: 45%;
+  max-height: 78%;
+  width: auto;
   height: auto;
-  display: inline-block;
   mix-blend-mode: multiply;
+}
+@media (max-width: 720px) {
+  .bandeau { aspect-ratio: 4 / 3; margin-left: -1.1rem; margin-right: -1.1rem; border-radius: 0; }
+  .bandeau::after { background: linear-gradient(180deg, rgba(244,239,230,0.92) 0%, rgba(244,239,230,0.6) 45%, transparent 65%); }
+  .brand { align-items: flex-start; justify-content: center; padding-top: 6%; }
+  .brand-logo { max-width: 75%; max-height: 42%; }
 }
 .tagline {
   font-family: "Cormorant Garamond", serif;
@@ -413,6 +450,57 @@ body {
   border-top: 1px solid var(--line);
 }
 
+/* --- Identité pro (Mon entreprise) --- */
+.id-pro {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.6rem 1.5rem;
+  margin: 0 0 1.5rem;
+  padding: 1.2rem 1.5rem;
+  background: rgba(255, 255, 255, 0.5);
+  border-left: 3px solid var(--teal);
+  border-radius: 8px;
+}
+.id-pro dt {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  align-self: baseline;
+}
+.id-pro dd {
+  margin: 0;
+  color: var(--ink);
+  font-size: 1.05rem;
+}
+
+/* --- Tableau de prix --- */
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0 1.5rem;
+  font-family: "Cormorant Garamond", serif;
+}
+.price-table th, .price-table td {
+  padding: 0.7rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+}
+.price-table th {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border-bottom: 2px solid var(--gold);
+}
+.price-table td:last-child {
+  text-align: right;
+  color: var(--teal-deep);
+  font-weight: 500;
+}
+
 /* Callout + student note */
 .callout {
   margin: 1.5rem 0;
@@ -672,19 +760,46 @@ body {
 .leaflet-popup-content strong { display: block; font-size: 1.1rem; margin-bottom: 0.2rem; }
 .leaflet-popup-content em { font-family: "Montserrat", sans-serif; font-style: normal; font-size: 0.7rem; letter-spacing: 0.1em; color: var(--red); text-transform: uppercase; }
 
-/* --- Points d'ancrage --- */
+/* --- Points d'ancrage (accordéon avec image de couverture) --- */
 .anchors { display: grid; gap: 1.5rem; margin: 1.5rem 0 2rem; }
-.anchor {
-  padding: 1.8rem 2rem;
+
+.anchor-card {
   background: rgba(255, 255, 255, 0.5);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   border-left: 3px solid var(--red);
+  overflow: hidden;
+  transition: box-shadow .4s var(--ease);
 }
-.anchor--pending {
+.anchor-card[open] { box-shadow: var(--shadow); }
+.anchor-card--pending {
   background: transparent;
   border-style: dashed;
   border-left-color: var(--line);
+  padding: 1.5rem 1.8rem;
+}
+.anchor-card > summary {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 0;
+  cursor: pointer;
+  list-style: none;
+  transition: background .3s var(--ease);
+  min-height: 180px;
+}
+.anchor-card > summary::-webkit-details-marker { display: none; }
+.anchor-card > summary:hover { background: rgba(127, 176, 190, 0.08); }
+.anchor-cover {
+  background-size: cover;
+  background-position: center;
+  min-height: 180px;
+}
+.anchor-head {
+  padding: 1.4rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.2rem;
 }
 .anchor-num {
   font-family: "Montserrat", sans-serif;
@@ -692,22 +807,51 @@ body {
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--red);
-  margin: 0 0 0.4rem;
+  margin: 0;
 }
-.anchor h4 {
+.anchor-head h4 {
   font-family: "Cormorant Garamond", serif;
   font-weight: 500;
   font-size: clamp(1.4rem, 2.2vw, 1.7rem);
   color: var(--teal-deep);
-  margin: 0 0 0.3rem;
+  margin: 0.2rem 0;
 }
 .anchor-coord {
   font-family: "Montserrat", sans-serif;
   font-size: 0.75rem;
   color: var(--ink-soft);
-  margin: 0 0 1.2rem;
+  margin: 0;
+}
+.anchor-toggle {
+  margin-top: 0.8rem;
+  align-self: flex-start;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--teal-deep);
+  padding: 0.5rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: background .3s var(--ease);
+}
+.anchor-card[open] .anchor-toggle { background: var(--teal-deep); color: var(--bg); }
+.anchor-card[open] .anchor-toggle .chevron { transform: rotate(180deg); }
+.anchor-toggle .chevron { transition: transform .4s var(--ease); }
+.anchor-body {
+  padding: 1.5rem 1.8rem 2rem;
+  border-top: 1px solid var(--line);
 }
 .anchor-links { margin-top: 2rem; }
+@media (max-width: 720px) {
+  .anchor-card > summary { grid-template-columns: 1fr; }
+  .anchor-cover { aspect-ratio: 4 / 3; min-height: 0; }
+  .anchor-head { padding: 1.2rem 1.4rem; }
+  .anchor-body { padding: 1.2rem 1.4rem 1.5rem; }
+}
 
 /* --- Textes à lire --- */
 .text-links { margin: 3rem 0 0; padding: 2rem 0 0; border-top: 1px solid var(--line); }

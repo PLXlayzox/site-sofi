@@ -15,9 +15,12 @@
   <!-- Home / accueil -->
   <section class="view is-active" id="accueil" data-view="accueil">
     <header class="hero">
-      <h1 class="brand">
-        <img src="assets/logo-sofi.jpg" alt="Sofi — artiste du vivant" class="brand-logo" />
-      </h1>
+      <div class="bandeau">
+        <div class="bandeau-visual" style="background-image: url('assets/bandeau-dragon.jpg');" aria-hidden="true"></div>
+        <h1 class="brand">
+          <img src="assets/logo-sofi.jpg" alt="Sofi — artiste du vivant" class="brand-logo" />
+        </h1>
+      </div>
       <p class="tagline reveal">Révéler ce qui nous relie, ce qui parfois échappe aux mots.</p>
     </header>
 
@@ -133,7 +136,6 @@
 
         <details class="mt-card" open>
           <summary>
-            <span class="mt-num">01</span>
             <span class="mt-title">Ma démarche artistique</span>
             <span class="mt-chevron">▾</span>
           </summary>
@@ -162,7 +164,6 @@
 
         <details class="mt-card">
           <summary>
-            <span class="mt-num">02</span>
             <span class="mt-title">Matière et geste</span>
             <span class="mt-chevron">▾</span>
           </summary>
@@ -204,7 +205,6 @@
 
         <details class="mt-card">
           <summary>
-            <span class="mt-num">03</span>
             <span class="mt-title">Mes créations</span>
             <span class="mt-chevron">▾</span>
           </summary>
@@ -223,7 +223,6 @@
 
         <details class="mt-card">
           <summary>
-            <span class="mt-num">04</span>
             <span class="mt-title">L'art comme espace de transformation</span>
             <span class="mt-chevron">▾</span>
           </summary>
@@ -309,93 +308,111 @@
       <h3 class="h-sub map-title">Points d'ancrage</h3>
       <div id="carte-mayenne" class="map"></div>
 
-      <!-- Fiches points d'ancrage -->
+      <!-- Fiches points d'ancrage (accordéon) -->
       <div class="anchors">
 
-        <article class="anchor">
-          <p class="anchor-num">📍 Point d'ancrage n°001</p>
-          <h4>Le Dragon de Fromentières</h4>
-          <p class="anchor-coord">47°51'49.3&quot;N — 0°39'57.7&quot;W</p>
+        <details class="anchor-card">
+          <summary>
+            <div class="anchor-cover" style="background-image: url('assets/dragon-cover.jpg');" aria-hidden="true"></div>
+            <div class="anchor-head">
+              <p class="anchor-num">📍 Point d'ancrage n°001</p>
+              <h4>Le Dragon de Fromentières</h4>
+              <p class="anchor-coord">47°51'49.3&quot;N — 0°39'57.7&quot;W</p>
+              <span class="anchor-toggle">Découvrir <span class="chevron">▾</span></span>
+            </div>
+          </summary>
 
-          <p>Commune rurale du Sud-Mayenne, au cœur de l'ancien Haut-Anjou, <strong>Fromentières</strong> porte une histoire ancienne, profondément liée à sa terre, à ses paysages, à l'eau et aux femmes et aux hommes qui l'ont façonnée. Son nom lui-même évoque le froment et rappelle la richesse agricole de ce territoire. Son patrimoine raconte également cette profondeur historique : l'église Saint-Pierre remonte au Moyen Âge, tandis que châteaux, manoirs, moulins et anciens domaines témoignent des différentes strates de son histoire.</p>
+          <div class="anchor-body prose">
+            <p>Commune rurale du Sud-Mayenne, au cœur de l'ancien Haut-Anjou, <strong>Fromentières</strong> porte une histoire ancienne, profondément liée à sa terre, à ses paysages, à l'eau et aux femmes et aux hommes qui l'ont façonnée. Son nom lui-même évoque le froment et rappelle la richesse agricole de ce territoire. Son patrimoine raconte également cette profondeur historique : l'église Saint-Pierre remonte au Moyen Âge, tandis que châteaux, manoirs, moulins et anciens domaines témoignent des différentes strates de son histoire.</p>
 
-          <p>Il existe, à Fromentières même, une présence ancienne et surprenante de la figure du <strong>dragon</strong>. Au manoir de Beaubigné, le patrimoine sculpté fait apparaître Saint-Michel terrassant le dragon, au milieu d'un décor où se côtoient végétal, chimères, feuillages et figures symboliques.</p>
+            <p>Il existe, à Fromentières même, une présence ancienne et surprenante de la figure du <strong>dragon</strong>. Au manoir de Beaubigné, le patrimoine sculpté fait apparaître Saint-Michel terrassant le dragon, au milieu d'un décor où se côtoient végétal, chimères, feuillages et figures symboliques.</p>
 
-          <p>Le dragon devient alors une créature gardienne, une figure de force, de mémoire et de mystère. Une manière de faire surgir ce qui était là, parfois invisible, et de donner une forme contemporaine à quelque chose qui appartient déjà profondément au lieu.</p>
+            <p>Le dragon devient alors une créature gardienne, une figure de force, de mémoire et de mystère. Une manière de faire surgir ce qui était là, parfois invisible, et de donner une forme contemporaine à quelque chose qui appartient déjà profondément au lieu.</p>
 
-          <p><em>Pour ce premier point d'ancrage, j'ai choisi de ne pas simplement représenter Fromentières : j'ai cherché à en révéler une présence forte.</em></p>
+            <p><em>Pour ce premier point d'ancrage, j'ai choisi de ne pas simplement représenter Fromentières : j'ai cherché à en révéler une présence forte.</em></p>
 
-          <div class="gallery gallery--dragon">
-            <img src="assets/dragon-fromentieres/dragon-01.jpg" alt="Fresque du dragon — Fromentières" loading="lazy" />
-            <img src="assets/dragon-fromentieres/dragon-02.jpg" alt="Fresque du dragon — Fromentières" loading="lazy" />
-            <img src="assets/dragon-fromentieres/dragon-03.jpg" alt="Fresque du dragon — Fromentières" loading="lazy" />
-            <img src="assets/dragon-fromentieres/dragon-04.jpg" alt="Fresque du dragon — Fromentières" loading="lazy" />
-            <img src="assets/dragon-fromentieres/dragon-05.jpg" alt="Fresque du dragon — Fromentières" loading="lazy" />
-            <img src="assets/dragon-fromentieres/dragon-06.jpg" alt="Fresque du dragon — Fromentières" loading="lazy" />
-            <img src="assets/dragon-fromentieres/dragon-07.jpg" alt="Fresque du dragon — Fromentières" loading="lazy" />
-            <img src="assets/dragon-fromentieres/dragon-08.jpg" alt="Fresque du dragon — Fromentières" loading="lazy" />
-            <img src="assets/dragon-fromentieres/dragon-09.jpg" alt="Fresque du dragon — Fromentières" loading="lazy" />
-            <img src="assets/dragon-fromentieres/dragon-10.jpg" alt="Fresque du dragon — Fromentières" loading="lazy" />
-            <img src="assets/dragon-fromentieres/dragon-11.jpg" alt="Fresque du dragon — Fromentières" loading="lazy" />
+            <div class="gallery gallery--dragon">
+              <img src="assets/dragon-fromentieres/dragon-01.jpg" alt="Fresque du dragon — Fromentières" loading="lazy" />
+              <img src="assets/dragon-fromentieres/dragon-02.jpg" alt="Fresque du dragon — Fromentières" loading="lazy" />
+              <img src="assets/dragon-fromentieres/dragon-03.jpg" alt="Fresque du dragon — Fromentières" loading="lazy" />
+              <img src="assets/dragon-fromentieres/dragon-04.jpg" alt="Fresque du dragon — Fromentières" loading="lazy" />
+              <img src="assets/dragon-fromentieres/dragon-05.jpg" alt="Fresque du dragon — Fromentières" loading="lazy" />
+              <img src="assets/dragon-fromentieres/dragon-06.jpg" alt="Fresque du dragon — Fromentières" loading="lazy" />
+              <img src="assets/dragon-fromentieres/dragon-07.jpg" alt="Fresque du dragon — Fromentières" loading="lazy" />
+              <img src="assets/dragon-fromentieres/dragon-08.jpg" alt="Fresque du dragon — Fromentières" loading="lazy" />
+              <img src="assets/dragon-fromentieres/dragon-09.jpg" alt="Fresque du dragon — Fromentières" loading="lazy" />
+              <img src="assets/dragon-fromentieres/dragon-10.jpg" alt="Fresque du dragon — Fromentières" loading="lazy" />
+              <img src="assets/dragon-fromentieres/dragon-11.jpg" alt="Fresque du dragon — Fromentières" loading="lazy" />
+            </div>
           </div>
-        </article>
+        </details>
 
-        <article class="anchor">
-          <p class="anchor-num">📍 Point d'ancrage n°002</p>
-          <h4>L'arche des possibles</h4>
-          <p class="anchor-coord">47°48'29.5&quot;N — 0°42'27.6&quot;W</p>
+        <details class="anchor-card">
+          <summary>
+            <div class="anchor-cover" style="background-image: url('assets/arche-cover.jpg');" aria-hidden="true"></div>
+            <div class="anchor-head">
+              <p class="anchor-num">📍 Point d'ancrage n°002</p>
+              <h4>L'arche des possibles</h4>
+              <p class="anchor-coord">47°48'29.5&quot;N — 0°42'27.6&quot;W</p>
+              <span class="anchor-toggle">Découvrir <span class="chevron">▾</span></span>
+            </div>
+          </summary>
 
-          <p>À <strong>Château-Gontier-sur-Mayenne</strong>, sous la passerelle de la Maroutière, ce deuxième point d'ancrage est né d'une commande de la Ville pour mettre en lumière le <strong>Refuge de l'Arche</strong> et les animaux qu'il accueille.</p>
+          <div class="anchor-body prose">
+            <p>À <strong>Château-Gontier-sur-Mayenne</strong>, sous la passerelle de la Maroutière, ce deuxième point d'ancrage est né d'une commande de la Ville pour mettre en lumière le <strong>Refuge de l'Arche</strong> et les animaux qu'il accueille.</p>
 
-          <p>Depuis 1968, l'histoire du Refuge est celle d'une rencontre entre des humains et des animaux en détresse. Accueillir, soigner, protéger, mais aussi raconter et sensibiliser : le Refuge est devenu un véritable lieu de vie et de transmission.</p>
+            <p>Depuis 1968, l'histoire du Refuge est celle d'une rencontre entre des humains et des animaux en détresse. Accueillir, soigner, protéger, mais aussi raconter et sensibiliser : le Refuge est devenu un véritable lieu de vie et de transmission.</p>
 
-          <p>La fresque fait entrer cette histoire dans l'espace public. Elle donne un visage aux pensionnaires du Refuge et transforme ce passage en espace de rencontre, de visibilité et d'indication vers le lieu qui les protège.</p>
+            <p>La fresque fait entrer cette histoire dans l'espace public. Elle donne un visage aux pensionnaires du Refuge et transforme ce passage en espace de rencontre, de visibilité et d'indication vers le lieu qui les protège.</p>
 
-          <p><em>L'arche des possibles devient ainsi un point d'ancrage particulier : une œuvre qui ne représente pas seulement des animaux, mais qui raconte le soin, le refuge, les histoires singulières et la possibilité d'une autre vie.</em></p>
+            <p><em>L'arche des possibles devient ainsi un point d'ancrage particulier : une œuvre qui ne représente pas seulement des animaux, mais qui raconte le soin, le refuge, les histoires singulières et la possibilité d'une autre vie.</em></p>
 
-          <p><strong>Ici, le vivant ne demande pas seulement à être regardé. Il demande à être accueilli.</strong></p>
+            <p><strong>Ici, le vivant ne demande pas seulement à être regardé. Il demande à être accueilli.</strong></p>
 
-          <figure class="article-figure">
-            <img src="assets/refuge-article.jpg" alt="Article Ouest-France sur la fresque du Refuge de l'Arche" loading="lazy" />
-            <figcaption>Article Ouest-France — La fresque pour valoriser le Refuge de l'Arche dévoilée</figcaption>
-          </figure>
+            <figure class="article-figure">
+              <img src="assets/refuge-article.jpg" alt="Article Ouest-France sur la fresque du Refuge de l'Arche" loading="lazy" />
+              <figcaption>Article Ouest-France — La fresque pour valoriser le Refuge de l'Arche dévoilée</figcaption>
+            </figure>
 
-          <div class="anchor-links">
-            <h5 class="h-subsub">Presse &amp; ressources</h5>
-            <ul class="ext-links">
-              <li>
-                <a href="https://www.ouest-france.fr/pays-de-la-loire/chateau-gontier-sur-mayenne-53200/video-sous-la-passerelle-du-v-and-b-fest-a-chateau-gontier-la-fresque-dediee-au-refuge-de-l-arche-est-terminee-894b60d6-fac4-371a-b0f8-f95c2c6c16dc" target="_blank" rel="noopener">
-                  Vidéo — La fresque dédiée au Refuge de l'Arche est terminée
-                  <span class="ext-meta">Ouest-France</span>
-                </a>
-              </li>
-              <li>
-                <a href="https://www.ouest-france.fr/pays-de-la-loire/chateau-gontier-sur-mayenne-53200/une-artiste-realise-une-fresque-sous-la-passerelle-de-saint-fort-pour-valoriser-le-refuge-de-larche-5cbe6e5a-7626-11f1-847f-0515a70d2189" target="_blank" rel="noopener">
-                  Une artiste réalise une fresque sous la passerelle de Saint-Fort
-                  <span class="ext-meta">Ouest-France</span>
-                </a>
-              </li>
-              <li>
-                <a href="https://www.ouest-france.fr/pays-de-la-loire/chateau-gontier-sur-mayenne-53200/totalement-a-notre-image-la-fresque-pour-valoriser-le-refuge-de-larche-devoilee-sous-la-passerelle-de-saint-fort-a61c1cd4-85b5-11f1-94d8-e478b94a49e4" target="_blank" rel="noopener">
-                  « Totalement à notre image » — La fresque dévoilée sous la passerelle de Saint-Fort
-                  <span class="ext-meta">Ouest-France</span>
-                </a>
-              </li>
-              <li>
-                <a href="textes/le-mot-du-refuge.html">
-                  Le mot du Refuge de l'Arche
-                  <span class="ext-meta">Texte</span>
-                </a>
-              </li>
-            </ul>
+            <div class="anchor-links">
+              <h5 class="h-subsub">Presse &amp; ressources</h5>
+              <ul class="ext-links">
+                <li>
+                  <a href="https://www.ouest-france.fr/pays-de-la-loire/chateau-gontier-sur-mayenne-53200/video-sous-la-passerelle-du-v-and-b-fest-a-chateau-gontier-la-fresque-dediee-au-refuge-de-l-arche-est-terminee-894b60d6-fac4-371a-b0f8-f95c2c6c16dc" target="_blank" rel="noopener">
+                    Vidéo — La fresque dédiée au Refuge de l'Arche est terminée
+                    <span class="ext-meta">Ouest-France</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.ouest-france.fr/pays-de-la-loire/chateau-gontier-sur-mayenne-53200/une-artiste-realise-une-fresque-sous-la-passerelle-de-saint-fort-pour-valoriser-le-refuge-de-larche-5cbe6e5a-7626-11f1-847f-0515a70d2189" target="_blank" rel="noopener">
+                    Une artiste réalise une fresque sous la passerelle de Saint-Fort
+                    <span class="ext-meta">Ouest-France</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.ouest-france.fr/pays-de-la-loire/chateau-gontier-sur-mayenne-53200/totalement-a-notre-image-la-fresque-pour-valoriser-le-refuge-de-larche-devoilee-sous-la-passerelle-de-saint-fort-a61c1cd4-85b5-11f1-94d8-e478b94a49e4" target="_blank" rel="noopener">
+                    « Totalement à notre image » — La fresque dévoilée sous la passerelle de Saint-Fort
+                    <span class="ext-meta">Ouest-France</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="textes/le-mot-du-refuge.html">
+                    Le mot du Refuge de l'Arche
+                    <span class="ext-meta">Texte</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
-        </article>
+        </details>
 
-        <article class="anchor anchor--pending">
-          <p class="anchor-num">📍 Point d'ancrage n°003</p>
-          <h4>En prévision</h4>
-          <p class="muted">Le prochain point d'ancrage sera bientôt révélé.</p>
-        </article>
+        <div class="anchor-card anchor-card--pending">
+          <div class="anchor-head">
+            <p class="anchor-num">📍 Point d'ancrage n°003</p>
+            <h4>En prévision</h4>
+            <p class="muted">Le prochain point d'ancrage sera bientôt révélé.</p>
+          </div>
+        </div>
       </div>
 
       <nav class="view-nav">
@@ -409,9 +426,132 @@
   <section class="view" id="entreprise" data-view="entreprise">
     <div class="page">
       <h1 class="section-title"><span class="section-num">03</span> Mon entreprise</h1>
-      <div class="empty-state">
-        <p class="muted">Cet espace est en cours de préparation. Le contenu arrive bientôt.</p>
+
+      <div class="sub-panel is-active">
+
+        <details class="mt-card" open>
+          <summary>
+            <span class="mt-title">Mon identité professionnelle</span>
+            <span class="mt-chevron">▾</span>
+          </summary>
+          <div class="mt-body prose">
+            <dl class="id-pro">
+              <dt>Nom d'usage</dt><dd>Sophie Lenfant</dd>
+              <dt>Activité actuelle</dt><dd>Artiste peintre / artiste plasticienne</dd>
+              <dt>Statut actuel</dt><dd>Micro-entrepreneure</dd>
+              <dt>SIREN</dt><dd>508 121 407</dd>
+              <dt>SIRET</dt><dd>508 121 407 00029</dd>
+              <dt>Début d'activité déclarée</dt><dd>1<sup>er</sup> juillet 2021</dd>
+              <dt>Code NAF actuel</dt><dd>9604Z — Entretien corporel</dd>
+              <dt>Régime fiscal</dt><dd>Versement libératoire de l'impôt sur le revenu&nbsp;: oui</dd>
+            </dl>
+
+            <div class="student-note">
+              <p><strong>Piste étudiants — quel statut pour un·e artiste ?</strong></p>
+              <p>Je suis actuellement micro-entrepreneure. Ce régime m'offre un cadre simple pour exercer mon activité indépendante. Mais mon activité artistique prend aujourd'hui une place de plus en plus importante et évolue vers de nouveaux types de projets. Je m'interroge donc sur la pertinence de mon cadre actuel.</p>
+              <p><em>La question se pose aujourd'hui : quel cadre correspond le mieux à mon activité artistique actuelle et à son évolution ?</em></p>
+              <p>Je cherche notamment à comprendre ce que changerait une activité relevant du régime des <strong>artistes-auteurs</strong>, et quelles seraient les conséquences en matière de cotisations, de protection sociale, de fiscalité et de gestion.</p>
+              <p>L'Urssaf propose aujourd'hui un dispositif spécifique pour les artistes-auteurs et un simulateur permettant d'estimer leurs cotisations ; les revenus artistiques peuvent relever de catégories différentes selon leur nature.</p>
+            </div>
+          </div>
+        </details>
+
+        <details class="mt-card">
+          <summary>
+            <span class="mt-title">Mes revenus</span>
+            <span class="mt-chevron">▾</span>
+          </summary>
+          <div class="mt-body prose">
+            <p class="muted">Documents à venir.</p>
+          </div>
+        </details>
+
+        <details class="mt-card">
+          <summary>
+            <span class="mt-title">Définir le prix de mon travail</span>
+            <span class="mt-chevron">▾</span>
+          </summary>
+          <div class="mt-body prose">
+            <p>Le prix de mon travail est encore un sujet de réflexion. Une œuvre représente du temps de recherche, des heures de création, des matières, un support, mais aussi une expérience, une histoire et une singularité qui ne sont pas directement mesurables.</p>
+            <p><em>Comment transformer tout cela en prix ? Comment savoir si mes tarifs me permettent réellement de vivre de mon activité ? Et comment faire évoluer mes prix lorsque mon expérience, mes projets et mes charges évoluent ?</em></p>
+
+            <h4 class="h-subsub">Mes tableaux — 700 €/m²</h4>
+            <p>Pour mes tableaux, j'ai choisi de fixer un prix de référence de <strong>700 €/m²</strong>. Cette méthode me permet d'adapter automatiquement le prix au format de l'œuvre.</p>
+
+            <table class="price-table">
+              <thead><tr><th>Format</th><th>Prix indicatif</th></tr></thead>
+              <tbody>
+                <tr><td>40 × 40 cm</td><td>112 €</td></tr>
+                <tr><td>50 × 50 cm</td><td>175 €</td></tr>
+                <tr><td>60 × 80 cm</td><td>336 €</td></tr>
+                <tr><td>80 × 80 cm</td><td>448 €</td></tr>
+                <tr><td>100 × 100 cm</td><td>700 €</td></tr>
+                <tr><td>100 × 120 cm</td><td>840 €</td></tr>
+              </tbody>
+            </table>
+
+            <p>Cette règle apporte une certaine cohérence, mais elle ne raconte pas toute l'histoire d'une œuvre. Deux tableaux de même dimension peuvent demander un temps de travail très différent, utiliser des matériaux différents et avoir une présence artistique complètement différente.</p>
+
+            <h4 class="h-subsub">Mes fresques — une autre logique</h4>
+            <div class="callout">
+              <ul>
+                <li><strong>250 €</strong> — forfait étude et matériel</li>
+                <li><strong>+ 300 €/m²</strong> pour la réalisation</li>
+                <li><strong>+ déplacement et hébergement</strong> à la charge du commanditaire lorsque le projet est hors secteur</li>
+              </ul>
+              <p><em>Exemples :</em><br />
+                • Une fresque de 10 m² → 250 € + (10 × 300 €) = <strong>3 250 €</strong><br />
+                • Une fresque de 20 m² → 250 € + (20 × 300 €) = <strong>6 250 €</strong>
+              </p>
+            </div>
+            <p>Cette construction me permet de distinguer le travail préparatoire et les fournitures de la réalisation elle-même.</p>
+
+            <div class="student-note">
+              <p><strong>Piste étudiants — questionnements autour du prix</strong></p>
+              <p>Mes prix sont-ils suffisamment élevés pour valoriser mon travail et permettre à mon entreprise de vivre, tout en restant accessibles aux personnes auxquelles je souhaite m'adresser ?</p>
+              <ul>
+                <li>Comment définir le juste prix de mon travail ?</li>
+                <li>Quelle différence entre prix, valeur et cote ?</li>
+                <li>Mes prix sont-ils cohérents avec mon positionnement et ma clientèle ?</li>
+                <li>Comment faire évoluer mes prix et construire progressivement ma cote ?</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <details class="mt-card">
+          <summary>
+            <span class="mt-title">Communiquer</span>
+            <span class="mt-chevron">▾</span>
+          </summary>
+          <div class="mt-body prose">
+            <p>Mon activité artistique se développe à travers plusieurs supports de communication.</p>
+            <p>Mon site internet et mes réseaux sociaux constituent mon espace principal : ils me permettent de présenter mon univers, mes œuvres, mes projets et aujourd'hui la <em>Cartographie sensible du vivant</em>. Ils servent également de point de contact pour les personnes qui souhaitent découvrir mon travail ou me proposer un projet.</p>
+
+            <ul class="ext-links">
+              <li><a href="https://www.art-sofi.com" target="_blank" rel="noopener">Mon site — www.art-sofi.com <span class="ext-meta">Site</span></a></li>
+              <li><a href="https://www.facebook.com/sofi.lenfant/?locale=fr_FR" target="_blank" rel="noopener">Facebook — sofi.lenfant <span class="ext-meta">Réseau</span></a></li>
+              <li><a href="https://www.instagram.com/sofi.artiste.bienveilleuse" target="_blank" rel="noopener">Instagram — @sofi.artiste.bienveilleuse <span class="ext-meta">Réseau</span></a></li>
+            </ul>
+
+            <p>Ma communication est elle aussi en construction. Pendant longtemps, elle a principalement servi à présenter mes œuvres et mes réalisations. Aujourd'hui, avec la <em>Cartographie sensible du vivant</em>, elle doit aussi me permettre de faire comprendre ma démarche, raconter mes projets et toucher de nouveaux publics : particuliers, entreprises, collectivités, associations ou lieux de vie.</p>
+
+            <blockquote>Ma question aujourd'hui : comment communiquer sur mon travail artistique sans simplement montrer ce que je fais, mais en donnant envie d'entrer dans mon univers et de construire un projet avec moi ?</blockquote>
+          </div>
+        </details>
+
+        <details class="mt-card">
+          <summary>
+            <span class="mt-title">Se développer</span>
+            <span class="mt-chevron">▾</span>
+          </summary>
+          <div class="mt-body prose">
+            <p class="muted">Contenu à venir.</p>
+          </div>
+        </details>
+
       </div>
+
       <nav class="view-nav">
         <a href="#accueil" class="nav-back" data-goto="accueil">↺ Accueil</a>
         <a href="#ressources" class="nav-next" data-goto="ressources">Espace ressources →</a>
@@ -424,7 +564,7 @@
     <div class="page">
       <h1 class="section-title"><span class="section-num">04</span> Espace ressources</h1>
       <div class="empty-state">
-        <p class="muted">Cet espace est en cours de préparation. Le contenu arrive bientôt.</p>
+        <p>Dans cet espace, seront déposées toutes les ressources qui auront été demandées, et dont vous pourriez avoir besoin.</p>
       </div>
 
       <div class="forum-block">
