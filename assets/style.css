@@ -1,4 +1,4 @@
-/* --- Palette & tokens (aquarelle sobre) --- */
+/* --- Palette & tokens --- */
 :root {
   --bg: #f4efe6;
   --bg-2: #ebe3d4;
@@ -8,6 +8,7 @@
   --teal-deep: #2c4a5c;
   --gold: #a68a5b;
   --accent: #7fb0be;
+  --red: #b8443a;
   --line: rgba(44, 74, 92, 0.15);
   --shadow: 0 20px 60px -30px rgba(44, 74, 92, 0.35);
   --radius: 14px;
@@ -39,34 +40,22 @@ body {
   transform: translateY(20px);
   transition: opacity .6s var(--ease), transform .6s var(--ease);
 }
-.view.is-active {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
-}
+.view.is-active { display: block; opacity: 1; transform: translateY(0); }
 
-/* --- Hero (logo Sofi) --- */
+/* --- Hero (logo image) --- */
 .hero {
   text-align: center;
   padding: clamp(1rem, 4vh, 3rem) 0 clamp(2rem, 6vh, 4rem);
 }
 .brand {
-  font-family: "Sacramento", cursive;
-  font-size: clamp(5rem, 12vw, 9rem);
-  font-weight: 400;
-  color: #1a1a1a;
   margin: 0;
-  line-height: 0.9;
-  letter-spacing: 0.02em;
+  line-height: 0;
 }
-.brand-sub {
-  font-family: "Montserrat", sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.4em;
-  font-size: 0.75rem;
-  color: #1a1a1a;
-  margin: -0.2rem 0 0;
-  padding-left: 0.4em; /* absorbe le tracking */
+.brand-logo {
+  max-width: min(420px, 70vw);
+  height: auto;
+  display: inline-block;
+  mix-blend-mode: multiply;
 }
 .tagline {
   font-family: "Cormorant Garamond", serif;
@@ -83,7 +72,7 @@ body {
   .tagline { white-space: normal; max-width: 42ch; }
 }
 
-/* --- Cards --- */
+/* --- Cards accueil --- */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -108,8 +97,7 @@ body {
 }
 .card::before {
   content: "";
-  position: absolute;
-  inset: 0;
+  position: absolute; inset: 0;
   background: linear-gradient(135deg, rgba(127, 176, 190, 0.0), rgba(127, 176, 190, 0.18));
   opacity: 0;
   transition: opacity .5s var(--ease);
@@ -137,11 +125,8 @@ body {
   line-height: 1.2;
 }
 .card-arrow {
-  position: absolute;
-  bottom: 1.25rem;
-  right: 1.5rem;
-  font-size: 1.4rem;
-  color: var(--teal);
+  position: absolute; bottom: 1.25rem; right: 1.5rem;
+  font-size: 1.4rem; color: var(--teal);
   transition: transform .4s var(--ease);
 }
 .card:hover .card-arrow { transform: translateX(6px); }
@@ -166,41 +151,27 @@ body {
   box-shadow: var(--shadow);
 }
 .contact-info { display: flex; flex-direction: column; gap: 1.2rem; }
-.contact-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+.contact-list { list-style: none; padding: 0; margin: 0; }
 .contact-list li {
-  display: flex;
-  gap: 1rem;
+  display: flex; gap: 1rem;
   padding: 0.5rem 0;
   border-bottom: 1px dashed var(--line);
-  font-family: "Montserrat", sans-serif;
-  font-size: 0.9rem;
+  font-family: "Montserrat", sans-serif; font-size: 0.9rem;
   align-items: center;
 }
 .contact-list span {
   min-width: 110px;
   color: var(--gold);
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
+  text-transform: uppercase; letter-spacing: 0.15em;
   font-size: 0.75rem;
 }
 .contact-list a { color: var(--ink); text-decoration: none; }
 .contact-list a:hover { color: var(--teal); }
 
-/* Forum link — décalé pour être identifiable */
-.forum-link {
-  margin-left: 2rem;
-  padding-top: 1rem;
-}
+.forum-link { margin-left: 2rem; padding-top: 1rem; }
 .forum-link a {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.6rem;
-  text-decoration: none;
-  color: var(--teal-deep);
+  display: flex; align-items: flex-start; gap: 0.6rem;
+  text-decoration: none; color: var(--teal-deep);
   padding: 1rem 1.2rem;
   background: rgba(127, 176, 190, 0.15);
   border: 1px solid var(--line);
@@ -212,16 +183,12 @@ body {
 .forum-arrow { color: var(--gold); font-size: 1.2rem; line-height: 1; }
 .forum-link strong {
   font-family: "Cormorant Garamond", serif;
-  font-weight: 500;
-  font-size: 1.05rem;
-  display: block;
+  font-weight: 500; font-size: 1.05rem; display: block;
 }
 .forum-link em {
   font-family: "Montserrat", sans-serif;
-  font-style: normal;
-  font-size: 0.7rem;
-  letter-spacing: 0.1em;
-  color: var(--ink-soft);
+  font-style: normal; font-size: 0.7rem;
+  letter-spacing: 0.1em; color: var(--ink-soft);
   text-transform: uppercase;
 }
 
@@ -235,7 +202,7 @@ body {
   padding: 2rem 0 0;
 }
 
-/* --- Section title (grand titre visible avec numéro) --- */
+/* --- Section title --- */
 .page { max-width: 900px; margin: 0 auto; }
 .section-title {
   font-family: "Cormorant Garamond", serif;
@@ -244,10 +211,7 @@ body {
   color: var(--teal-deep);
   margin: 0 0 2rem;
   line-height: 1.1;
-  display: flex;
-  align-items: baseline;
-  gap: 1.2rem;
-  flex-wrap: wrap;
+  display: flex; align-items: baseline; gap: 1.2rem; flex-wrap: wrap;
 }
 .section-num {
   font-family: "Montserrat", sans-serif;
@@ -268,7 +232,27 @@ body {
   margin: 0 0 2.5rem;
 }
 
-/* --- Prose --- */
+/* --- Hierarchie titres : sous-titre / sous-sous-titre --- */
+.h-sub {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-size: clamp(1.6rem, 2.5vw, 2.1rem);
+  color: var(--teal-deep);
+  margin: 3rem 0 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--line);
+  letter-spacing: 0.005em;
+}
+.h-subsub {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-style: italic;
+  font-size: clamp(1.2rem, 1.8vw, 1.45rem);
+  color: var(--teal);
+  margin: 1.8rem 0 0.6rem;
+}
+
+/* --- Prose (justifié partout) --- */
 .eyebrow {
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
@@ -277,34 +261,60 @@ body {
   color: var(--gold);
   margin: 0 0 1rem;
 }
-.prose h3 {
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 500;
-  font-size: 1.3rem;
-  color: var(--teal-deep);
-  margin: 2.2rem 0 0.8rem;
+.prose p {
+  margin: 0 0 1rem;
+  color: var(--ink);
+  text-align: justify;
+  hyphens: auto;
 }
-.prose p { margin: 0 0 1rem; color: var(--ink); }
+.prose p.lead {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--teal-deep);
+  text-align: left;
+}
 .prose ul.bullets { padding-left: 1.2rem; margin: 0 0 1.5rem; }
 .prose ul.bullets li { margin: 0.4rem 0; }
 .prose ol.approaches { padding-left: 1.2rem; margin: 0 0 1.5rem; }
 .prose ol.approaches li { margin: 0.7rem 0; }
+.prose blockquote {
+  border-left: 3px solid var(--gold);
+  margin: 1.5rem 0;
+  padding: 0.4rem 1.2rem;
+  font-style: italic;
+  color: var(--ink-soft);
+  background: rgba(127, 176, 190, 0.06);
+}
+.prose blockquote cite { font-style: normal; color: var(--teal-deep); font-size: 0.9em; }
 .muted { color: var(--ink-soft); font-style: italic; }
 .muted.small { font-size: 0.85rem; }
 
-.dropcap {
+/* Capitales de début de phrase (bio Sofi) */
+.cap-lead {
   font-family: "Sacramento", cursive;
   font-size: 3.5rem;
+  line-height: 0.8;
   float: left;
-  line-height: 0.85;
-  padding: 0.25rem 0.5rem 0 0;
   color: var(--teal-deep);
+  padding: 0.35rem 0.5rem 0 0;
 }
+.cap-mid {
+  font-family: "Sacramento", cursive;
+  font-size: 1.7em;
+  line-height: 0.8;
+  color: var(--teal-deep);
+  vertical-align: -0.15em;
+  padding-right: 0.05em;
+}
+.bio-lead {
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+.bio-lead::after { content: ""; display: block; clear: both; }
 
 /* --- Sous-onglets --- */
 .sub-tabs {
-  display: flex;
-  gap: 0.5rem;
+  display: flex; gap: 0.5rem;
   margin: 0 0 2.5rem;
   border-bottom: 1px solid var(--line);
   flex-wrap: wrap;
@@ -314,8 +324,7 @@ body {
   font-size: 0.8rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  background: none;
-  border: none;
+  background: none; border: none;
   padding: 0.9rem 1.4rem;
   cursor: pointer;
   color: var(--ink-soft);
@@ -323,18 +332,14 @@ body {
   transition: color .3s var(--ease);
 }
 .sub-tab::after {
-  content: "";
-  position: absolute;
+  content: ""; position: absolute;
   left: 1.4rem; right: 1.4rem; bottom: -1px;
-  height: 2px;
-  background: var(--teal-deep);
-  transform: scaleX(0);
-  transform-origin: left;
+  height: 2px; background: var(--teal-deep);
+  transform: scaleX(0); transform-origin: left;
   transition: transform .4s var(--ease);
 }
 .sub-tab:hover, .sub-tab.is-active { color: var(--teal-deep); }
 .sub-tab.is-active::after { transform: scaleX(1); }
-
 .sub-panel { display: none; animation: fadeUp .5s var(--ease); }
 .sub-panel.is-active { display: block; }
 @keyframes fadeUp {
@@ -343,9 +348,7 @@ body {
 }
 
 /* --- Bio magazine (photo ronde en shape-outside) --- */
-.bio-mag {
-  position: relative;
-}
+.bio-mag { position: relative; }
 .bio-portrait {
   float: left;
   width: 260px;
@@ -355,16 +358,183 @@ body {
   shape-margin: 12px;
 }
 .bio-portrait img {
-  width: 100%;
-  height: 100%;
+  width: 100%; height: 100%;
   object-fit: cover;
   border-radius: 50%;
   box-shadow: var(--shadow);
 }
-.bio-text p:first-of-type { margin-top: 0; }
 .bio-text::after { content: ""; display: block; clear: both; }
 
-/* --- Empty state (sections en construction) --- */
+/* --- Mon travail : cartes accordéon --- */
+.mt-card {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  margin: 0 0 1rem;
+  overflow: hidden;
+  transition: box-shadow .4s var(--ease);
+}
+.mt-card[open] { box-shadow: var(--shadow); }
+.mt-card > summary {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.4rem 1.6rem;
+  cursor: pointer;
+  list-style: none;
+  transition: background .3s var(--ease);
+}
+.mt-card > summary::-webkit-details-marker { display: none; }
+.mt-card > summary:hover { background: rgba(127, 176, 190, 0.1); }
+.mt-num {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  color: var(--gold);
+  padding: 0.35rem 0.7rem;
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+}
+.mt-title {
+  flex: 1;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  color: var(--teal-deep);
+}
+.mt-chevron {
+  color: var(--teal);
+  font-size: 1.1rem;
+  transition: transform .4s var(--ease);
+}
+.mt-card[open] .mt-chevron { transform: rotate(180deg); }
+.mt-body {
+  padding: 0.5rem 1.6rem 2rem;
+  border-top: 1px solid var(--line);
+}
+
+/* Callout + student note */
+.callout {
+  margin: 1.5rem 0;
+  padding: 1.2rem 1.5rem;
+  background: rgba(166, 138, 91, 0.1);
+  border-left: 3px solid var(--gold);
+  border-radius: 8px;
+}
+.callout h5 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-size: 1.15rem;
+  color: var(--teal-deep);
+  margin: 0 0 0.6rem;
+}
+.callout ul { margin: 0 0 0.6rem; padding-left: 1.2rem; }
+.callout p { margin: 0; }
+.student-note {
+  background: rgba(184, 68, 58, 0.08);
+  border-left: 3px solid var(--red);
+  padding: 0.9rem 1.2rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  margin: 1rem 0 1.5rem;
+}
+.ext-links { list-style: none; padding: 0; margin: 1rem 0; display: grid; gap: 0.6rem; }
+.ext-links a {
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+  padding: 0.9rem 1.2rem;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--teal-deep);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.05rem;
+  transition: background .3s var(--ease), transform .3s var(--ease);
+}
+.ext-links a:hover { background: rgba(255, 255, 255, 0.8); transform: translateX(4px); }
+.ext-meta {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  white-space: nowrap;
+}
+
+/* --- Galerie (masonry via CSS columns) --- */
+.gallery {
+  columns: 3 260px;
+  column-gap: 0.8rem;
+  margin: 1.5rem 0;
+}
+.gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 0 0.8rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 30px -20px rgba(0,0,0,0.4);
+  cursor: zoom-in;
+  transition: transform .35s var(--ease), box-shadow .35s var(--ease);
+  break-inside: avoid;
+}
+.gallery img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 40px -20px rgba(0,0,0,0.55);
+}
+.gallery--dragon { columns: 2 220px; }
+
+/* Article figure (Ouest-France) */
+.article-figure {
+  margin: 1.5rem 0;
+  padding: 0;
+}
+.article-figure img {
+  width: 100%; max-width: 500px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  cursor: zoom-in;
+}
+.article-figure figcaption {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--ink-soft);
+  margin-top: 0.8rem;
+}
+
+/* --- Lightbox --- */
+.lightbox {
+  position: fixed; inset: 0;
+  background: rgba(28, 40, 48, 0.92);
+  display: none;
+  justify-content: center; align-items: center;
+  z-index: 100;
+  padding: 2rem;
+}
+.lightbox.is-open { display: flex; animation: fadeIn .3s var(--ease); }
+.lightbox-img {
+  max-width: 100%; max-height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 40px 100px -30px rgba(0,0,0,0.8);
+}
+.lightbox-close {
+  position: absolute; top: 1rem; right: 1.5rem;
+  background: none; border: none;
+  color: white; font-size: 2.5rem;
+  cursor: pointer;
+  line-height: 1;
+  transition: transform .3s var(--ease);
+}
+.lightbox-close:hover { transform: scale(1.1); }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* --- Empty state --- */
 .empty-state {
   padding: 4rem 2rem;
   text-align: center;
@@ -374,7 +544,7 @@ body {
   margin: 2rem 0;
 }
 
-/* --- Feature link (manifeste) --- */
+/* --- Feature link --- */
 .feature-link {
   display: grid;
   grid-template-columns: 260px 1fr;
@@ -388,20 +558,12 @@ body {
   margin: 0 0 3rem;
   transition: box-shadow .4s var(--ease), transform .4s var(--ease);
 }
-.feature-link:hover {
-  box-shadow: var(--shadow);
-  transform: translateY(-3px);
-}
-.feature-visual {
-  background-size: cover;
-  background-position: center;
-  min-height: 200px;
-}
+.feature-link:hover { box-shadow: var(--shadow); transform: translateY(-3px); }
+.feature-visual { background-size: cover; background-position: center; min-height: 200px; }
 .feature-body { padding: 1.8rem 2rem; }
 .feature-body h3 {
   font-family: "Cormorant Garamond", serif;
-  font-size: 1.7rem;
-  font-weight: 500;
+  font-size: 1.7rem; font-weight: 500;
   color: var(--teal-deep);
   margin: 0.4rem 0 0.8rem;
 }
@@ -415,13 +577,7 @@ body {
 }
 
 /* --- Carte Leaflet --- */
-.map-title {
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 500;
-  font-size: 1.6rem;
-  color: var(--teal-deep);
-  margin: 3rem 0 1rem;
-}
+.map-title { margin-top: 3rem; }
 .map {
   width: 100%;
   height: 420px;
@@ -438,25 +594,20 @@ body {
   color: var(--teal-deep) !important;
 }
 .leaflet-popup-content strong { display: block; font-size: 1.1rem; margin-bottom: 0.2rem; }
-.leaflet-popup-content em { font-family: "Montserrat", sans-serif; font-style: normal; font-size: 0.7rem; letter-spacing: 0.1em; color: var(--gold); text-transform: uppercase; }
+.leaflet-popup-content em { font-family: "Montserrat", sans-serif; font-style: normal; font-size: 0.7rem; letter-spacing: 0.1em; color: var(--red); text-transform: uppercase; }
 
-/* --- Points d'ancrage (fiches) --- */
-.anchors {
-  display: grid;
-  gap: 1.2rem;
-  margin: 1.5rem 0 2rem;
-}
+/* --- Points d'ancrage --- */
+.anchors { display: grid; gap: 1.5rem; margin: 1.5rem 0 2rem; }
 .anchor {
-  padding: 1.5rem 1.8rem;
+  padding: 1.8rem 2rem;
   background: rgba(255, 255, 255, 0.5);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  border-left: 3px solid var(--gold);
+  border-left: 3px solid var(--red);
 }
 .anchor--pending {
   background: transparent;
   border-style: dashed;
-  border-left-style: dashed;
   border-left-color: var(--line);
 }
 .anchor-num {
@@ -464,13 +615,13 @@ body {
   font-size: 0.75rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--red);
   margin: 0 0 0.4rem;
 }
 .anchor h4 {
   font-family: "Cormorant Garamond", serif;
   font-weight: 500;
-  font-size: 1.4rem;
+  font-size: clamp(1.4rem, 2.2vw, 1.7rem);
   color: var(--teal-deep);
   margin: 0 0 0.3rem;
 }
@@ -478,15 +629,12 @@ body {
   font-family: "Montserrat", sans-serif;
   font-size: 0.75rem;
   color: var(--ink-soft);
-  margin: 0 0 0.8rem;
+  margin: 0 0 1.2rem;
 }
+.anchor-links { margin-top: 2rem; }
 
 /* --- Textes à lire --- */
-.text-links {
-  margin: 3rem 0 0;
-  padding: 2rem 0 0;
-  border-top: 1px solid var(--line);
-}
+.text-links { margin: 3rem 0 0; padding: 2rem 0 0; border-top: 1px solid var(--line); }
 .text-links h3 {
   font-family: "Montserrat", sans-serif;
   font-size: 0.8rem;
@@ -494,18 +642,11 @@ body {
   text-transform: uppercase;
   color: var(--gold);
   margin: 0 0 1rem;
+  border: none;
 }
-.text-links ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: 0.6rem;
-}
+.text-links ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.6rem; }
 .text-links a {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: flex; justify-content: space-between; align-items: center;
   padding: 1rem 1.25rem;
   background: rgba(255, 255, 255, 0.5);
   border: 1px solid var(--line);
@@ -523,7 +664,7 @@ body {
 }
 .text-links a span { color: var(--gold); font-size: 1rem; }
 
-/* --- Forum block (ressources) --- */
+/* --- Forum block --- */
 .forum-block {
   margin: 3rem 0 2rem;
   padding: 2rem;
@@ -537,6 +678,7 @@ body {
   font-size: 1.5rem;
   color: var(--teal-deep);
   margin: 0 0 0.6rem;
+  border: none;
 }
 .btn-primary {
   display: inline-block;
@@ -554,11 +696,9 @@ body {
 }
 .btn-primary:hover { background: var(--teal); transform: translateY(-2px); }
 
-/* --- Nav entre sections --- */
+/* --- Nav --- */
 .view-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: flex; justify-content: space-between; align-items: center;
   gap: 1rem;
   margin: 4rem 0 0;
   padding: 2rem 0 0;
@@ -578,10 +718,8 @@ body {
   transition: background .3s var(--ease), color .3s var(--ease), border-color .3s var(--ease), transform .3s var(--ease);
 }
 .view-nav a:hover {
-  background: var(--teal-deep);
-  color: var(--bg);
-  border-color: var(--teal-deep);
-  transform: translateY(-2px);
+  background: var(--teal-deep); color: var(--bg);
+  border-color: var(--teal-deep); transform: translateY(-2px);
 }
 .view-nav .nav-next { margin-left: auto; }
 
@@ -595,6 +733,7 @@ body {
 
 /* --- Grand écran / vidéoprojecteur --- */
 @media (min-width: 1600px) {
+  .brand-logo { max-width: 560px; }
   .cards { max-width: 1500px; gap: 2.2rem; }
   .card { padding: 2.8rem 2.4rem 4rem; }
   .card h2 { font-size: 2.1rem; }
@@ -604,8 +743,8 @@ body {
   .bio-portrait { width: 340px; }
 }
 @media (min-width: 1920px) {
+  .brand-logo { max-width: 680px; }
   .cards { max-width: 1720px; }
-  .brand { font-size: clamp(8rem, 10vw, 13rem); }
   .section-title { font-size: 5rem; }
 }
 
@@ -620,8 +759,7 @@ body {
 @media (max-width: 720px) {
   body { font-size: 17px; }
   .view { padding: 2.5rem 1.1rem 3rem; }
-  .brand { font-size: 5.5rem; }
-  .brand-sub { font-size: 0.7rem; letter-spacing: 0.3em; }
+  .brand-logo { max-width: 82vw; }
   .tagline { font-size: 1.15rem; padding: 0 0.5rem; }
   .cards { grid-template-columns: 1fr; gap: 1rem; padding: 1.5rem 0; }
   .card { padding: 1.5rem 1.3rem 2.5rem; }
@@ -641,12 +779,17 @@ body {
   .section-num { font-size: 0.75rem; padding: 0.3rem 0.6rem; }
   .sub-lead { font-size: 1.1rem; padding-left: 0.9rem; }
   .bio-portrait { float: none; width: 220px; margin: 0 auto 1.5rem; display: block; }
-  .bio-text::after { content: none; }
-  .dropcap { font-size: 3rem; }
+  .cap-lead { font-size: 3rem; }
+  .cap-mid { font-size: 1.5em; }
   .view-nav { justify-content: center; gap: 0.6rem; margin-top: 3rem; padding-top: 1.5rem; }
   .view-nav a { padding: 0.6rem 1rem; font-size: 0.7rem; letter-spacing: 0.15em; }
   .view-nav .nav-next { margin-left: 0; }
   .map { height: 320px; }
+  .mt-card > summary { padding: 1.1rem 1.2rem; gap: 0.8rem; }
+  .mt-body { padding: 0.5rem 1.2rem 1.5rem; }
+  .anchor { padding: 1.3rem 1.4rem; }
+  .gallery { columns: 2 150px; }
+  .gallery--dragon { columns: 2 140px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

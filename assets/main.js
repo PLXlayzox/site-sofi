@@ -1,5 +1,8 @@
-// Navigation entre sections + reveal + sous-onglets + carte Leaflet
+// Navigation + sous-onglets + reveal + carte Leaflet + galerie œuvres + lightbox
 const views = document.querySelectorAll('.view');
+
+// Liste des œuvres (générée à partir du dossier assets/oeuvres/)
+const OEUVRES_COUNT = 28;
 
 function showView(id, { push = true } = {}) {
   const target = document.getElementById(id) || document.getElementById('accueil');
@@ -10,13 +13,14 @@ function showView(id, { push = true } = {}) {
     window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
     runReveal(target);
     if (id === 'cartographie') initMap();
+    if (id === 'univers') buildGallery();
   });
   if (push && location.hash !== '#' + target.id) {
     history.pushState({ view: target.id }, '', '#' + target.id);
   }
 }
 
-// Reveal au scroll
+// --- Reveal au scroll
 const io = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
@@ -33,7 +37,7 @@ function runReveal(root) {
   });
 }
 
-// Clic sur cartes / liens data-goto
+// --- Navigation cartes
 document.addEventListener('click', (e) => {
   const el = e.target.closest('[data-goto]');
   if (!el) return;
@@ -41,7 +45,7 @@ document.addEventListener('click', (e) => {
   showView(el.dataset.goto);
 });
 
-// Sous-onglets
+// --- Sous-onglets
 document.addEventListener('click', (e) => {
   const tab = e.target.closest('.sub-tab');
   if (!tab) return;
@@ -51,21 +55,63 @@ document.addEventListener('click', (e) => {
   scope.querySelectorAll('.sub-panel').forEach(p => p.classList.toggle('is-active', p.dataset.panel === target));
 });
 
-// Back/Forward
+// --- Back/Forward
 window.addEventListener('popstate', () => {
   const id = location.hash.replace('#', '') || 'accueil';
   showView(id, { push: false });
 });
 
-// Année
+// --- Année
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// --- Carte Leaflet des points d'ancrage (init une seule fois) ---
+// --- Galerie œuvres (peuple #galerie-oeuvres au premier passage)
+let galleryReady = false;
+function buildGallery() {
+  if (galleryReady) return;
+  const el = document.getElementById('galerie-oeuvres');
+  if (!el) return;
+  const frag = document.createDocumentFragment();
+  for (let i = 1; i <= OEUVRES_COUNT; i++) {
+    const num = String(i).padStart(2, '0');
+    const img = document.createElement('img');
+    img.src = `assets/oeuvres/oeuvre-${num}.jpg`;
+    img.alt = `Œuvre ${num} — Sofi`;
+    img.loading = 'lazy';
+    frag.appendChild(img);
+  }
+  el.appendChild(frag);
+  galleryReady = true;
+}
+
+// --- Lightbox (clic sur image de galerie ou article-figure)
+const lb = document.getElementById('lightbox');
+const lbImg = lb?.querySelector('.lightbox-img');
+const lbClose = lb?.querySelector('.lightbox-close');
+
+document.addEventListener('click', (e) => {
+  const img = e.target.closest('.gallery img, .article-figure img');
+  if (!img || !lb || !lbImg) return;
+  lbImg.src = img.src;
+  lbImg.alt = img.alt || '';
+  lb.classList.add('is-open');
+  lb.setAttribute('aria-hidden', 'false');
+});
+function closeLb() {
+  if (!lb) return;
+  lb.classList.remove('is-open');
+  lb.setAttribute('aria-hidden', 'true');
+  if (lbImg) lbImg.src = '';
+}
+lbClose?.addEventListener('click', closeLb);
+lb?.addEventListener('click', (e) => { if (e.target === lb) closeLb(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLb(); });
+
+// --- Carte Leaflet
 let mapReady = false;
 const anchors = [
   { n: '001', name: 'Le Dragon de Fromentières', lat: 47.86369, lng: -0.66603 },
-  { n: '002', name: "Les animaux du refuge de l'Arche", lat: 47.80819, lng: -0.70767 },
+  { n: '002', name: "L'arche des possibles",     lat: 47.80819, lng: -0.70767 },
 ];
 
 function initMap() {
@@ -79,7 +125,7 @@ function initMap() {
   }).addTo(map);
   const icon = L.divIcon({
     className: 'sofi-pin',
-    html: '<div style="width:28px;height:28px;border-radius:50%;background:#a68a5b;border:3px solid #f4efe6;box-shadow:0 4px 12px rgba(0,0,0,0.3);"></div>',
+    html: '<div style="width:28px;height:28px;border-radius:50%;background:#b8443a;border:3px solid #f4efe6;box-shadow:0 4px 12px rgba(0,0,0,0.3);"></div>',
     iconSize: [28, 28],
     iconAnchor: [14, 14],
   });
@@ -89,10 +135,9 @@ function initMap() {
       .bindPopup(`<strong>${a.name}</strong><em>Point d'ancrage n°${a.n}</em>`);
   });
   mapReady = true;
-  // Fix taille si vue cachée au premier init
   setTimeout(() => map.invalidateSize(), 200);
 }
 
-// Init : ouvrir la bonne section depuis l'URL
+// --- Init : ouvrir la bonne section depuis l'URL
 const initial = location.hash.replace('#', '') || 'accueil';
 showView(initial, { push: false });

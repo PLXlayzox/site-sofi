@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sofi — artiste du vivant</title>
-  <meta name="description" content="Sofi, artiste du vivant. Cartographie sensible, univers, entreprise et ressources." />
+  <meta name="description" content="Sofi, artiste du vivant. Univers, cartographie sensible, entreprise et ressources." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
@@ -15,8 +15,9 @@
   <!-- Home / accueil -->
   <section class="view is-active" id="accueil" data-view="accueil">
     <header class="hero">
-      <h1 class="brand">Sofi</h1>
-      <p class="brand-sub">artiste du vivant</p>
+      <h1 class="brand">
+        <img src="assets/logo-sofi.jpg" alt="Sofi — artiste du vivant" class="brand-logo" />
+      </h1>
       <p class="tagline reveal">Révéler ce qui nous relie, ce qui parfois échappe aux mots.</p>
     </header>
 
@@ -57,7 +58,7 @@
           <li><span>Email</span><a href="mailto:sophielenfant24@proton.me">sophielenfant24@proton.me</a></li>
           <li><span>Site</span><a href="https://www.art-sofi.com" target="_blank" rel="noopener">www.art-sofi.com</a></li>
           <li><span>Instagram</span><a href="https://www.instagram.com/sofi.artiste.bienveilleuse" target="_blank" rel="noopener">@sofi.artiste.bienveilleuse</a></li>
-          <li><span>Facebook</span><a href="#" target="_blank" rel="noopener" title="Lien à venir">Facebook</a></li>
+          <li><span>Facebook</span><a href="https://www.facebook.com/sofi.lenfant/?locale=fr_FR" target="_blank" rel="noopener">sofi.lenfant</a></li>
         </ul>
 
         <div class="forum-link">
@@ -80,13 +81,12 @@
     <div class="page">
       <h1 class="section-title"><span class="section-num">01</span> Mon univers</h1>
 
-      <!-- Sous-espaces -->
       <nav class="sub-tabs" aria-label="Sous-sections de Mon univers">
         <button class="sub-tab is-active" data-sub="sofi">Sofi</button>
         <button class="sub-tab" data-sub="travail">Mon travail</button>
       </nav>
 
-      <!-- Sofi : layout magazine (photo ronde + texte wrap) -->
+      <!-- Sofi -->
       <div class="sub-panel is-active" data-panel="sofi">
         <div class="bio-mag">
           <figure class="bio-portrait">
@@ -94,9 +94,11 @@
           </figure>
 
           <div class="prose bio-text">
-            <p><span class="dropcap">J</span>e suis Sofi. Artiste du vivant. Je suis stable, solide et profondément ancrée. Je suis celle qui cherche la beauté, les couleurs et la lumière. Amoureuse de la nature, de la musique, de la danse et du mouvement. Passionnée par les relations humaines et fascinée par ce qui relie les êtres. Je choisis de nourrir la joie. Je mets un point d'honneur à prendre plaisir dans tout ce que je fais. Créer, partager, transmettre, apprendre… chaque expérience est une occasion de célébrer le vivant. Un brin loufoque, j'entretiens ma part de fantaisie. Éternelle optimiste, je crois que la beauté peut transformer un regard, une journée… parfois davantage. J'essaie de rendre le monde un peu plus beau… et je continue d'y croire, obstinément.</p>
+            <p class="bio-lead">
+              <span class="cap-lead">J</span>e suis <span class="cap-mid">S</span>ofi. <span class="cap-mid">A</span>rtiste du vivant. <span class="cap-mid">J</span>e suis stable, solide et profondément ancrée. <span class="cap-mid">J</span>e suis celle qui cherche la beauté, les couleurs et la lumière. <span class="cap-mid">A</span>moureuse de la nature, de la musique, de la danse et du mouvement. <span class="cap-mid">P</span>assionnée par les relations humaines et fascinée par ce qui relie les êtres. <span class="cap-mid">J</span>e choisis de nourrir la joie. <span class="cap-mid">J</span>e mets un point d'honneur à prendre plaisir dans tout ce que je fais. <span class="cap-mid">C</span>réer, partager, transmettre, apprendre… chaque expérience est une occasion de célébrer le vivant. <span class="cap-mid">U</span>n brin loufoque, j'entretiens ma part de fantaisie. <span class="cap-mid">É</span>ternelle optimiste, je crois que la beauté peut transformer un regard, une journée… parfois davantage. <span class="cap-mid">J</span>'essaie de rendre le monde un peu plus beau… et je continue d'y croire, obstinément.
+            </p>
 
-            <h3>Je révèle…</h3>
+            <h3 class="h-sub">Je révèle…</h3>
 
             <p>Créer est une nécessité. Sortir des cadres. Ne pas rester figée. Explorer, sentir, vivre en présence, en lien…</p>
 
@@ -117,7 +119,7 @@
         </div>
 
         <div class="text-links">
-          <h3>Textes à lire</h3>
+          <h3 class="h-sub">Textes à lire</h3>
           <ul>
             <li><a href="textes/peindre.html">Peindre <span>↗</span></a></li>
             <li><a href="textes/les-cadres.html">Je revendique le droit de faire péter les cadres <span>↗</span></a></li>
@@ -126,11 +128,119 @@
         </div>
       </div>
 
-      <!-- Mon travail : vide en attente -->
+      <!-- Mon travail : 4 cartes -->
       <div class="sub-panel" data-panel="travail">
-        <div class="empty-state">
-          <p class="muted">Cet espace est en cours de préparation. Le contenu arrive bientôt.</p>
-        </div>
+
+        <details class="mt-card" open>
+          <summary>
+            <span class="mt-num">01</span>
+            <span class="mt-title">Ma démarche artistique</span>
+            <span class="mt-chevron">▾</span>
+          </summary>
+          <div class="mt-body prose">
+            <p class="lead">Trois axes de travail…</p>
+
+            <h4 class="h-subsub">Alors que le thème définit l'œuvre</h4>
+            <p>Une rencontre, une personne, un paysage, ou encore une demande particulière. J'aime cette façon de travailler, d'aborder une œuvre. Il s'agit pour moi de me connecter en profondeur avec un sujet, quel qu'il soit, d'en saisir l'essentiel afin de le traduire sur la toile.</p>
+            <p>Dans un premier temps, je rencontre le sujet, j'essaie d'en intégrer toutes les subtilités, de le comprendre, de le ressentir. Puis, une fois devant la toile, après avoir défini un projet, je laisse faire mes émotions, je ne suis plus du tout dans le contrôle, le mental est mis de côté pour laisser place aux sens. Essentiel…</p>
+            <blockquote>
+              « Toute pensée est une sensation contrariée. » — <cite>Emil Cioran</cite><br />
+              « Entre la connaissance et la sensation, le rapport c'est le sentiment. » — <cite>George Sand</cite>
+            </blockquote>
+
+            <h4 class="h-subsub">Quand le support guide le geste</h4>
+            <p>Plus de toile, envie de peindre… Je décide donc de chercher d'autres supports, et très vite, je me rends compte que mon geste, le choix des couleurs ou l'émotion qui se dégage de l'œuvre, dépendent pleinement du choix de ce support.</p>
+            <p>C'est ainsi que je profite (dans l'idée également de recycler et de réutiliser des matériaux) de ce qui m'est offert. Rester ouvert et attentif au monde et à ses possibles, l'inspiration est partout.</p>
+            <blockquote>« N'attendez pas l'inspiration, elle vient pendant que l'on travaille. » — <cite>Henri Matisse</cite></blockquote>
+
+            <h4 class="h-subsub">De l'émotion en pagaille</h4>
+            <p>Cette approche de la peinture est pour moi la plus spontanée. Il s'agit simplement de capter un instant, avec toute l'émotion qui l'habite. C'est une façon de travailler très personnelle, je ne sais jamais quel sera le résultat de mon effervescence sur la toile.</p>
+            <p>Parfois, une toile me permet de comprendre les émotions qui me traversent, c'est alors un moment intense pour moi, et c'est également ce qui m'aide à grandir et à progresser artistiquement et dans la vie.</p>
+            <blockquote>« Tu n'as aucun besoin de contrôler tes émotions. Les émotions sont naturelles, elles passent comme la météo qui change. Parfois c'est de la peur, parfois de la tristesse ou encore de la colère. Les émotions ne sont pas un problème. La clé est de transformer l'énergie de l'émotion en action constructive. » — <cite>Le guerrier pacifique, Dan Millman</cite></blockquote>
+          </div>
+        </details>
+
+        <details class="mt-card">
+          <summary>
+            <span class="mt-num">02</span>
+            <span class="mt-title">Matière et geste</span>
+            <span class="mt-chevron">▾</span>
+          </summary>
+          <div class="mt-body prose">
+            <h4 class="h-subsub">L'acrylique et les médiums</h4>
+            <p>L'acrylique est aujourd'hui ma peinture de prédilection. J'apprécie particulièrement son intensité, sa richesse de couleurs et sa capacité à conserver cette intensité dans le temps. J'achète principalement mes peintures auprès de <em>La Maison des Beaux-Arts</em>, notamment pour la diversité de leur gamme et la simplicité que cela représente dans mon organisation.</p>
+            <p>Je complète parfois l'acrylique avec d'autres médiums — encre, aquarelle, pastel, collage de matériaux… Aucune technique n'est réellement exclue : je cherche avant tout celle qui me permettra d'obtenir l'effet ou la sensation recherchée.</p>
+            <p>À terme, j'aimerais explorer davantage les peintures naturelles, tout en retrouvant les qualités qui me sont essentielles dans l'acrylique : l'intensité de la couleur et sa tenue dans le temps.</p>
+
+            <p class="student-note"><strong>Piste étudiants — amélioration de l'activité.</strong> Je n'ai pas encore optimisé mes achats de peinture : je n'ai pas suffisamment comparé les fournisseurs, les tarifs ou les conditionnements. C'est un axe de progrès de mon activité.</p>
+
+            <h4 class="h-subsub">Outils et traces</h4>
+            <p>Je m'équipe assez peu en outils spécifiques. Les pinceaux restent indispensables, mais j'aime surtout détourner des objets ordinaires pour créer des traces : papier texturé, carton ondulé, papier bulle, matières récupérées… Ces objets portent déjà en eux une manière de laisser une empreinte.</p>
+            <p>Je peux alors partir d'une trace que je n'ai pas entièrement maîtrisée et construire la suite de l'œuvre à partir de ce qui apparaît. Le hasard a ainsi une place importante dans mon processus. Je ne cherche pas toujours à contrôler le résultat dès le départ. Une texture, une coulure, une empreinte ou une rencontre inattendue entre deux matières peut devenir le point de départ du geste suivant.</p>
+
+            <h4 class="h-subsub">Récupérer plutôt qu'acheter</h4>
+            <p>Je cherche autant que possible à ne pas acheter de supports neufs. Je préfère récupérer ce qui existe déjà et lui donner une nouvelle vie. Anciennes toiles, cadres trouvés chez Emmaüs, chutes de bois, supports récupérés ici et là… Je peux réparer un cadre, recréer un fond, repeindre une ancienne œuvre ou intégrer le support lui-même à la création.</p>
+            <p>La récupération n'est donc pas seulement une question d'économie ou de démarche environnementale. Elle nourrit aussi mon travail : un support porte une histoire, des traces, des imperfections. Il peut influencer ce que je vais créer. Je ne choisis pas toujours le support avant l'œuvre. Parfois, c'est le support qui me dit ce que l'œuvre peut devenir.</p>
+
+            <h4 class="h-subsub">Peindre in situ</h4>
+            <p>Lorsque je travaille directement dans un lieu, le support n'est plus choisi par moi. Il est là. Un mur, une porte de garage, une façade, un espace public… Chaque surface possède ses contraintes, ses dimensions, sa lumière, son environnement et son histoire. Le geste doit alors s'adapter au lieu.</p>
+            <p>La peinture devient une création in situ, pensée pour un espace particulier et pour celles et ceux qui vont le rencontrer. C'est particulièrement visible dans les fresques : ici, le support n'est plus simplement une surface sur laquelle je peins. Il fait partie de l'œuvre.</p>
+
+            <div class="callout">
+              <h5>Faire avec ce qui est là</h5>
+              <ul>
+                <li>Récupérer plutôt qu'acheter.</li>
+                <li>Expérimenter plutôt que tout contrôler.</li>
+                <li>Laisser la matière proposer.</li>
+                <li>Adapter le geste au support.</li>
+                <li>Chercher la couleur sans renoncer à la durabilité.</li>
+              </ul>
+              <p><em>Ma façon de travailler est aussi faite de ces choix, de ces contraintes et de ces expérimentations.</em></p>
+            </div>
+
+            <p class="student-note"><strong>Pistes étudiants — axes d'amélioration.</strong> Coût des matières · fournisseurs · temps d'approvisionnement · stockage · récupération · transport · contraintes techniques des fresques · évolution vers des peintures naturelles · choix environnementaux.</p>
+          </div>
+        </details>
+
+        <details class="mt-card">
+          <summary>
+            <span class="mt-num">03</span>
+            <span class="mt-title">Mes créations</span>
+            <span class="mt-chevron">▾</span>
+          </summary>
+          <div class="mt-body prose">
+            <blockquote>
+              Je pars d'une émotion, d'une rencontre, d'une image, d'une matière ou parfois simplement d'une envie de couleur. Mes œuvres explorent le vivant sous différentes formes : animal, végétal, humain, paysage, symbole ou abstraction.<br /><br />
+              Certaines apparaissent progressivement dans le geste et la matière, d'autres naissent d'une intention plus précise. Je laisse toujours une place à ce qui peut surgir en cours de création.<br /><br />
+              <em>Chaque œuvre est une rencontre entre ce que je cherche et ce que la peinture me révèle.</em>
+            </blockquote>
+
+            <div class="gallery" id="galerie-oeuvres">
+              <!-- Peuplé par JS via listing (ou fallback statique ci-dessous) -->
+            </div>
+          </div>
+        </details>
+
+        <details class="mt-card">
+          <summary>
+            <span class="mt-num">04</span>
+            <span class="mt-title">L'art comme espace de transformation</span>
+            <span class="mt-chevron">▾</span>
+          </summary>
+          <div class="mt-body prose">
+            <p>Je ne vois pas l'art uniquement comme une manière de créer ou de représenter. Il peut aussi ouvrir un espace où quelque chose se déplace : le regard que l'on porte sur soi, sur son corps, sur les autres ou sur le monde.</p>
+            <p>À travers le portrait, la peinture corporelle ou encore le travail autour des formes et des symboles, je cherche à créer des expériences qui invitent à regarder autrement, à révéler ce qui était parfois enfoui ou invisible, et à laisser émerger une autre perception de soi ou du vivant.</p>
+            <p>L'œuvre devient alors plus qu'un objet : elle peut être une expérience, un miroir, un révélateur ou un espace de transformation.</p>
+
+            <h4 class="h-subsub">Pour aller plus loin</h4>
+            <ul class="ext-links">
+              <li><a href="https://sophie-lenfant.com/body-painting-quand-lart-nous-revele/" target="_blank" rel="noopener">Body painting — quand l'art nous révèle ↗</a></li>
+              <li><a href="https://sophie-lenfant.com/un-portrait-pour-restaurer-lestime-de-soi/" target="_blank" rel="noopener">Un portrait pour restaurer l'estime de soi ↗</a></li>
+              <li><a href="https://sophie-lenfant.com/geometrie-sacree-et-symboles-agissants/" target="_blank" rel="noopener">Géométrie sacrée et symboles agissants ↗</a></li>
+            </ul>
+          </div>
+        </details>
+
       </div>
 
       <nav class="view-nav">
@@ -146,29 +256,27 @@
       <h1 class="section-title"><span class="section-num">02</span> Cartographie sensible du vivant</h1>
       <p class="sub-lead">Révéler l'identité sensible d'un lieu, d'un territoire ou d'une organisation. Parce que le vivant mérite notre présence.</p>
 
-      <!-- Lien vers le manifeste -->
-      <a href="textes/manifeste.html" class="feature-link">
+      <!-- Lien vers le manifeste (externe) -->
+      <a href="https://art-sofi.com/manifeste-artistique-reveler-le-vivant/" target="_blank" rel="noopener" class="feature-link">
         <div class="feature-visual" style="background-image: url('assets/manifeste-loup.jpg');"></div>
         <div class="feature-body">
           <p class="eyebrow">Texte</p>
           <h3>Manifeste artistique</h3>
           <p>Parce que le vivant mérite qu'on s'y attarde.</p>
-          <span class="feature-arrow">Lire le manifeste →</span>
+          <span class="feature-arrow">Lire le manifeste ↗</span>
         </div>
       </a>
 
       <!-- Trame du projet -->
       <div class="prose">
-        <h3>Une œuvre en mouvement</h3>
-        <p>La Cartographie sensible du vivant est une œuvre en mouvement. Chaque nouveau point d'ancrage enrichit une géographie sensible faite de rencontres, de récits et de création artistique.</p>
-
+        <h3 class="h-sub">Parce que le vivant mérite notre présence</h3>
         <p>Je désire intensément la liberté du lien simple et essentiel, la liberté de notre lien intime et puissant avec la terre, avec ce qui respire, avec ce qui ne demande rien d'autre que de la présence. Parce que c'est là que tout commence. Quand je ralentis, quand je suis posée, ancrée, calme, à l'écoute de mon corps et du vivant qui m'entoure, alors quelque chose apparaît.</p>
 
         <p>Je suis sensible à ce qui ne se voit pas. Le monde est habité par beaucoup plus que ce que nos yeux peuvent voir. Présences silencieuses, énergies particulières, puissantes, équilibrantes, autant de réalités qui nous relient à quelque chose de plus vaste que nous. C'est cet espace que j'explore.</p>
 
         <p>Au fil de mon exploration, j'aspire à révéler ce qui habite le monde. Révéler l'identité sensible des lieux, des territoires et des organisations est aujourd'hui l'un des chemins par lesquels cette recherche prend forme.</p>
 
-        <h3>Qu'est-ce qu'une cartographie sensible ?</h3>
+        <h3 class="h-sub">Qu'est-ce qu'une cartographie sensible ?</h3>
         <p>Une cartographie sensible cherche à révéler ce qui rend un territoire unique. Chaque lieu possède une mémoire, des récits, des symboles, des paysages, des savoir-faire et des liens invisibles qui façonnent son identité.</p>
 
         <p>À travers la rencontre, l'observation et la création artistique, je cherche à faire émerger cette identité sensible et à lui donner une forme visible. Chaque œuvre devient alors un point d'ancrage. Peu à peu, ces points composent une cartographie vivante faite de lieux, d'histoires et de rencontres.</p>
@@ -184,39 +292,103 @@
           <li>un lieu de vie…</li>
         </ul>
 
-        <h3>Une démarche en trois temps</h3>
+        <h3 class="h-sub">Comment naît un point d'ancrage ?</h3>
+        <p>Chaque lieu possède une mémoire, des récits, des symboles et des liens invisibles. Mon travail consiste à les écouter, les révéler et leur donner forme à travers une œuvre singulière.</p>
+
+        <h4 class="h-subsub">Une démarche en trois temps…</h4>
         <ol class="approaches">
           <li><strong>Écouter.</strong> Rencontrer les habitants, les acteurs et les mémoires du lieu.</li>
           <li><strong>Révéler.</strong> Faire émerger les symboles, récits et singularités.</li>
           <li><strong>Créer.</strong> Donner forme à cette identité sensible.</li>
         </ol>
 
-        <h3>Une œuvre en déploiement</h3>
-        <p>Chaque œuvre naît d'une rencontre avec un lieu, son histoire, ses habitants, son imaginaire ou les présences qui l'habitent. À travers la peinture, les fresques et les créations in situ, je cherche à révéler l'identité sensible des territoires. Chaque réalisation devient un point d'ancrage, une trace visible d'une rencontre.</p>
-
-        <p>La Cartographie sensible du vivant est une œuvre territoriale évolutive. À terme, cette œuvre reliera des communes, des patrimoines, des organisations et des paysages à travers un réseau de créations uniques.</p>
-
         <p class="muted">La cartographie est ouverte. Les prochains points d'ancrage naîtront des territoires, lieux et organisations qui souhaiteront prendre part à cette aventure artistique.</p>
       </div>
 
-      <!-- Carte des points d'ancrage -->
-      <h3 class="map-title">Points d'ancrage</h3>
+      <!-- Carte -->
+      <h3 class="h-sub map-title">Points d'ancrage</h3>
       <div id="carte-mayenne" class="map"></div>
 
       <!-- Fiches points d'ancrage -->
       <div class="anchors">
+
         <article class="anchor">
           <p class="anchor-num">📍 Point d'ancrage n°001</p>
           <h4>Le Dragon de Fromentières</h4>
-          <p class="anchor-coord">47°51'49.3&quot;N — 0°39'57.7&quot;W · Mayenne</p>
-          <p>Première manifestation de la Cartographie sensible du vivant. Réalisée à Fromentières en Mayenne, cette fresque marque le premier point d'ancrage de l'œuvre. Chaque nouveau lieu rejoint progressivement une cartographie artistique révélant les singularités du vivant à travers les territoires.</p>
+          <p class="anchor-coord">47°51'49.3&quot;N — 0°39'57.7&quot;W</p>
+
+          <p>Commune rurale du Sud-Mayenne, au cœur de l'ancien Haut-Anjou, <strong>Fromentières</strong> porte une histoire ancienne, profondément liée à sa terre, à ses paysages, à l'eau et aux femmes et aux hommes qui l'ont façonnée. Son nom lui-même évoque le froment et rappelle la richesse agricole de ce territoire. Son patrimoine raconte également cette profondeur historique : l'église Saint-Pierre remonte au Moyen Âge, tandis que châteaux, manoirs, moulins et anciens domaines témoignent des différentes strates de son histoire.</p>
+
+          <p>Il existe, à Fromentières même, une présence ancienne et surprenante de la figure du <strong>dragon</strong>. Au manoir de Beaubigné, le patrimoine sculpté fait apparaître Saint-Michel terrassant le dragon, au milieu d'un décor où se côtoient végétal, chimères, feuillages et figures symboliques.</p>
+
+          <p>Le dragon devient alors une créature gardienne, une figure de force, de mémoire et de mystère. Une manière de faire surgir ce qui était là, parfois invisible, et de donner une forme contemporaine à quelque chose qui appartient déjà profondément au lieu.</p>
+
+          <p><em>Pour ce premier point d'ancrage, j'ai choisi de ne pas simplement représenter Fromentières : j'ai cherché à en révéler une présence forte.</em></p>
+
+          <div class="gallery gallery--dragon">
+            <img src="assets/dragon-fromentieres/dragon-01.jpg" alt="Fresque du dragon — Fromentières" loading="lazy" />
+            <img src="assets/dragon-fromentieres/dragon-02.jpg" alt="Fresque du dragon — Fromentières" loading="lazy" />
+            <img src="assets/dragon-fromentieres/dragon-03.jpg" alt="Fresque du dragon — Fromentières" loading="lazy" />
+            <img src="assets/dragon-fromentieres/dragon-04.jpg" alt="Fresque du dragon — Fromentières" loading="lazy" />
+            <img src="assets/dragon-fromentieres/dragon-05.jpg" alt="Fresque du dragon — Fromentières" loading="lazy" />
+            <img src="assets/dragon-fromentieres/dragon-06.jpg" alt="Fresque du dragon — Fromentières" loading="lazy" />
+            <img src="assets/dragon-fromentieres/dragon-07.jpg" alt="Fresque du dragon — Fromentières" loading="lazy" />
+            <img src="assets/dragon-fromentieres/dragon-08.jpg" alt="Fresque du dragon — Fromentières" loading="lazy" />
+            <img src="assets/dragon-fromentieres/dragon-09.jpg" alt="Fresque du dragon — Fromentières" loading="lazy" />
+            <img src="assets/dragon-fromentieres/dragon-10.jpg" alt="Fresque du dragon — Fromentières" loading="lazy" />
+            <img src="assets/dragon-fromentieres/dragon-11.jpg" alt="Fresque du dragon — Fromentières" loading="lazy" />
+          </div>
         </article>
 
         <article class="anchor">
           <p class="anchor-num">📍 Point d'ancrage n°002</p>
-          <h4>Les animaux du refuge de l'Arche</h4>
-          <p class="anchor-coord">47°48'29.5&quot;N — 0°42'27.6&quot;W · Mayenne</p>
-          <p class="muted">Présentation à venir.</p>
+          <h4>L'arche des possibles</h4>
+          <p class="anchor-coord">47°48'29.5&quot;N — 0°42'27.6&quot;W</p>
+
+          <p>À <strong>Château-Gontier-sur-Mayenne</strong>, sous la passerelle de la Maroutière, ce deuxième point d'ancrage est né d'une commande de la Ville pour mettre en lumière le <strong>Refuge de l'Arche</strong> et les animaux qu'il accueille.</p>
+
+          <p>Depuis 1968, l'histoire du Refuge est celle d'une rencontre entre des humains et des animaux en détresse. Accueillir, soigner, protéger, mais aussi raconter et sensibiliser : le Refuge est devenu un véritable lieu de vie et de transmission.</p>
+
+          <p>La fresque fait entrer cette histoire dans l'espace public. Elle donne un visage aux pensionnaires du Refuge et transforme ce passage en espace de rencontre, de visibilité et d'indication vers le lieu qui les protège.</p>
+
+          <p><em>L'arche des possibles devient ainsi un point d'ancrage particulier : une œuvre qui ne représente pas seulement des animaux, mais qui raconte le soin, le refuge, les histoires singulières et la possibilité d'une autre vie.</em></p>
+
+          <p><strong>Ici, le vivant ne demande pas seulement à être regardé. Il demande à être accueilli.</strong></p>
+
+          <figure class="article-figure">
+            <img src="assets/refuge-article.jpg" alt="Article Ouest-France sur la fresque du Refuge de l'Arche" loading="lazy" />
+            <figcaption>Article Ouest-France — La fresque pour valoriser le Refuge de l'Arche dévoilée</figcaption>
+          </figure>
+
+          <div class="anchor-links">
+            <h5 class="h-subsub">Presse &amp; ressources</h5>
+            <ul class="ext-links">
+              <li>
+                <a href="https://www.ouest-france.fr/pays-de-la-loire/chateau-gontier-sur-mayenne-53200/video-sous-la-passerelle-du-v-and-b-fest-a-chateau-gontier-la-fresque-dediee-au-refuge-de-l-arche-est-terminee-894b60d6-fac4-371a-b0f8-f95c2c6c16dc" target="_blank" rel="noopener">
+                  Vidéo — La fresque dédiée au Refuge de l'Arche est terminée
+                  <span class="ext-meta">Ouest-France</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.ouest-france.fr/pays-de-la-loire/chateau-gontier-sur-mayenne-53200/une-artiste-realise-une-fresque-sous-la-passerelle-de-saint-fort-pour-valoriser-le-refuge-de-larche-5cbe6e5a-7626-11f1-847f-0515a70d2189" target="_blank" rel="noopener">
+                  Une artiste réalise une fresque sous la passerelle de Saint-Fort
+                  <span class="ext-meta">Ouest-France</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.ouest-france.fr/pays-de-la-loire/chateau-gontier-sur-mayenne-53200/totalement-a-notre-image-la-fresque-pour-valoriser-le-refuge-de-larche-devoilee-sous-la-passerelle-de-saint-fort-a61c1cd4-85b5-11f1-94d8-e478b94a49e4" target="_blank" rel="noopener">
+                  « Totalement à notre image » — La fresque dévoilée sous la passerelle de Saint-Fort
+                  <span class="ext-meta">Ouest-France</span>
+                </a>
+              </li>
+              <li>
+                <a href="textes/le-mot-du-refuge.html">
+                  Le mot du Refuge de l'Arche
+                  <span class="ext-meta">Texte</span>
+                </a>
+              </li>
+            </ul>
+          </div>
         </article>
 
         <article class="anchor anchor--pending">
@@ -237,11 +409,9 @@
   <section class="view" id="entreprise" data-view="entreprise">
     <div class="page">
       <h1 class="section-title"><span class="section-num">03</span> Mon entreprise</h1>
-
       <div class="empty-state">
         <p class="muted">Cet espace est en cours de préparation. Le contenu arrive bientôt.</p>
       </div>
-
       <nav class="view-nav">
         <a href="#accueil" class="nav-back" data-goto="accueil">↺ Accueil</a>
         <a href="#ressources" class="nav-next" data-goto="ressources">Espace ressources →</a>
@@ -253,13 +423,12 @@
   <section class="view" id="ressources" data-view="ressources">
     <div class="page">
       <h1 class="section-title"><span class="section-num">04</span> Espace ressources</h1>
-
       <div class="empty-state">
         <p class="muted">Cet espace est en cours de préparation. Le contenu arrive bientôt.</p>
       </div>
 
       <div class="forum-block">
-        <h3>Forum étudiants</h3>
+        <h3 class="h-sub">Forum étudiants</h3>
         <p>Un espace d'échange pour poser des questions, partager des travaux et discuter avec Sofi.</p>
         <a href="https://github.com/PLXlayzox/site-sofi/discussions" target="_blank" rel="noopener" class="btn-primary">Ouvrir le forum ↗</a>
         <p class="muted small">Hébergé sur GitHub Discussions. Une inscription (gratuite) est nécessaire pour poster. Sofi reçoit une notification par email à chaque nouveau message.</p>
@@ -272,7 +441,13 @@
     </div>
   </section>
 
-  <!-- Leaflet pour la carte des points d'ancrage -->
+  <!-- Lightbox (léger, natif) -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-hidden="true" aria-label="Aperçu de l'image">
+    <button class="lightbox-close" aria-label="Fermer">×</button>
+    <img class="lightbox-img" alt="" />
+  </div>
+
+  <!-- Leaflet -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
   <script src="assets/main.js" defer></script>
