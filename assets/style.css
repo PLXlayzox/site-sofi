@@ -507,6 +507,82 @@ body {
   margin-top: 0.8rem;
 }
 
+/* --- Bouton QR flottant + dialog --- */
+.qr-btn {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.7rem 1.1rem;
+  background: var(--teal-deep);
+  color: var(--bg);
+  border: 2px solid var(--bg);
+  border-radius: 999px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 10px 30px -10px rgba(44,74,92,0.6);
+  transition: transform .3s var(--ease), background .3s var(--ease);
+}
+.qr-btn:hover { transform: translateY(-3px); background: var(--teal); }
+.qr-btn svg { display: block; }
+
+.qr-modal {
+  border: none;
+  border-radius: var(--radius);
+  padding: 2rem;
+  background: var(--bg);
+  color: var(--ink);
+  max-width: 380px;
+  width: calc(100% - 2rem);
+  box-shadow: 0 40px 100px -30px rgba(0,0,0,0.4);
+  text-align: center;
+}
+.qr-modal::backdrop {
+  background: rgba(28, 40, 48, 0.7);
+  backdrop-filter: blur(4px);
+}
+.qr-modal h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-size: 1.25rem;
+  color: var(--teal-deep);
+  margin: 0 0 1.2rem;
+}
+.qr-modal img {
+  width: 260px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 1rem;
+  border-radius: 8px;
+}
+.qr-url {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: var(--ink-soft);
+  margin: 0;
+}
+.qr-close {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.6rem;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--teal-deep);
+  cursor: pointer;
+  line-height: 1;
+  padding: 0.2rem 0.6rem;
+}
+.qr-close:hover { color: var(--red); }
+
 /* --- Lightbox --- */
 .lightbox {
   position: fixed; inset: 0;

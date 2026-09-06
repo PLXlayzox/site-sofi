@@ -11,6 +11,35 @@ on:
     types: [created]
 
 jobs:
+  push-notification:
+    # Notif push instantanée via ntfy.sh (Sophie installe l'app ntfy sur
+    # son téléphone → subscribe au topic secret). Aucun compte requis.
+    # Secret NTFY_URL = https://ntfy.sh/<topic-secret> (à définir).
+    # Se skip silencieusement si le secret n'est pas configure.
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send ntfy push
+        if: env.NTFY_URL != ''
+        env:
+          NTFY_URL: ${{ secrets.NTFY_URL }}
+        run: |
+          if [ "${{ github.event_name }}" = "discussion" ]; then
+            TITLE="Nouveau sujet : ${{ github.event.discussion.title }}"
+            BODY="${{ github.event.sender.login }} vient d'ouvrir un sujet"
+            LINK="${{ github.event.discussion.html_url }}"
+          else
+            TITLE="Nouveau commentaire de ${{ github.event.comment.user.login }}"
+            BODY="Sur : ${{ github.event.discussion.title }}"
+            LINK="${{ github.event.comment.html_url }}"
+          fi
+          curl -s "$NTFY_URL" \
+            -H "Title: Forum Sofi — $TITLE" \
+            -H "Priority: default" \
+            -H "Tags: speech_balloon,artist" \
+            -H "Click: $LINK" \
+            -H "Actions: view, Voir le message, $LINK" \
+            -d "$BODY"
+
   send-email:
     runs-on: ubuntu-latest
     steps:
