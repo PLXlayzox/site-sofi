@@ -48,41 +48,25 @@ body {
   padding: 0 0 clamp(2rem, 6vh, 4rem);
 }
 .bandeau {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto clamp(1.5rem, 4vh, 3rem);
-}
-.bandeau--split {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  align-items: stretch;
-}
-.bandeau-left, .bandeau-right {
-  aspect-ratio: 1 / 1;
-  border-radius: var(--radius);
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--shadow);
-}
-.bandeau-left img.brand-logo {
-  max-width: 88%;
-  max-height: 78%;
-  width: auto;
-  height: auto;
-  mix-blend-mode: multiply;
-}
-.bandeau-right img {
+  gap: clamp(1rem, 3vw, 2.5rem);
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  max-width: 1200px;
+  margin: 0 auto clamp(1.5rem, 4vh, 3rem);
+  height: clamp(180px, 28vw, 380px);
 }
+.bandeau img {
+  height: 100%;
+  width: auto;
+  max-width: 60%;
+  object-fit: contain;
+}
+.bandeau .brand-logo { mix-blend-mode: multiply; }
 @media (max-width: 720px) {
-  .bandeau--split { grid-template-columns: 1fr; gap: 0.7rem; }
-  .bandeau-left, .bandeau-right { aspect-ratio: 4 / 3; }
+  .bandeau { flex-direction: column; height: auto; gap: 1rem; }
+  .bandeau img { width: 78%; height: auto; max-width: 78%; }
 }
 .tagline {
   font-family: "Cormorant Garamond", serif;
@@ -585,48 +569,39 @@ body {
 }
 .gallery--dragon { columns: 2 220px; }
 
-/* --- Mosaïque (grille fixe) --- */
+/* --- Mosaïque : masonry pour --four, grille explicite pour --six --- */
 .mosaic {
-  display: grid;
-  gap: 0.6rem;
+  columns: 2;
+  column-gap: 0.6rem;
   margin: 1.5rem 0;
 }
-.mosaic--four {
-  grid-template-columns: repeat(2, 1fr);
-}
-.mosaic--six {
-  grid-template-columns: repeat(3, 1fr);
-}
 .mosaic img {
+  display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+  height: auto;
+  margin: 0 0 0.6rem;
   border-radius: 10px;
   box-shadow: 0 8px 30px -20px rgba(0,0,0,0.4);
   cursor: zoom-in;
   transition: transform .35s var(--ease), box-shadow .35s var(--ease);
+  break-inside: avoid;
 }
 .mosaic img:hover {
   transform: scale(1.02);
   box-shadow: 0 12px 40px -20px rgba(0,0,0,0.55);
 }
-/* Mosaïque 4 : première photo prend 2 colonnes (hero) */
-.mosaic--four img:first-child {
-  grid-column: 1 / -1;
-  aspect-ratio: 16 / 9;
+/* Grille explicite pour la mosaïque à 6 photos */
+.mosaic--six {
+  columns: unset;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+  align-items: start;
 }
-/* Mosaïque 6 : première photo prend 2×2, format hero */
-.mosaic--six img:first-child {
-  grid-column: 1 / 3;
-  grid-row: 1 / 3;
-  aspect-ratio: auto;
-  height: 100%;
-}
+.mosaic--six img { margin: 0; }
 @media (max-width: 720px) {
-  .mosaic--four,
+  .mosaic { columns: 2; }
   .mosaic--six { grid-template-columns: repeat(2, 1fr); }
-  .mosaic--six img:first-child { grid-column: 1 / -1; grid-row: auto; aspect-ratio: 16 / 9; }
-  .mosaic--four img:first-child { aspect-ratio: 16 / 9; }
 }
 
 /* Article figure (Ouest-France) */
